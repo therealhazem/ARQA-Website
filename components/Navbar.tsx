@@ -26,7 +26,7 @@ const Navbar = () => {
     const Pathname = usePathname();
 
     return (
-        <nav className="w-full h-[66px] border-b-2 border-dark-primary/50 p-2
+        <nav className="w-full h-[66px] border-b-2 border-myprimary p-2
         fixed top-0 z-50 backdrop-blur-3xl bg-white/85 shadow-lg/10">
             <div className="container mx-auto flex flex-row items-center justify-between">
 
@@ -47,6 +47,7 @@ const Navbar = () => {
 
                 <Button className="hidden md:flex bg-myprimary font-bold hover:bg-dark-primary">
                     <Link href="/" >Get Quote</Link>
+
                 </Button>
 
 
