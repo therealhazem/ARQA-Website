@@ -29,27 +29,30 @@ const cards = [
 ]
 const Categories = () => {
     return (
-        <div className='container mx-auto flex flex-col items-center text-center px-5 py-12'>
-            <h1 className="font-poppins font-bold text-xl md:text-4xl">
-                Product Categories
-            </h1>
-            <h2 className="text-gray-400 font-poppins text-base md:text-xl">
-                Comprehensive medical supply solutions for every healthcare need
-            </h2>
+        <div className="w-full bg-gray-50">
 
-            <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 items-center justify-between gap-4 mt-7">
-                {cards.map((item) => (
-                    <div key={item.title} className="flex flex-col items-center justify-center border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200
-                     px-5 py-5 h-full">
-                        <div className="bg-myprimary/30 rounded-full text-dark-primary p-3 m-4">
-                            <item.icon width={32} height={32} />
+            <div className='container mx-auto flex flex-col items-center text-center px-5 py-16'>
+                <h1 className="font-poppins font-bold text-xl md:text-4xl">
+                    Product Categories
+                </h1>
+                <h2 className="text-gray-400 font-poppins text-base md:text-xl">
+                    Comprehensive medical supply solutions for every healthcare need
+                </h2>
+
+                <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 items-center justify-between gap-4 mt-7">
+                    {cards.map((item) => (
+                        <div key={item.title} className="flex flex-col items-center justify-center border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200
+                    px-5 py-5 h-full bg-white">
+                            <div className="bg-myprimary/30 rounded-full text-dark-primary p-3 m-4">
+                                <item.icon width={32} height={32} />
+                            </div>
+                            <h1 className="font-semibold lg:text-xl">{item.title}</h1>
+                            <h2 className="text-gray-500 lg:text-lg">{item.desc}</h2>
                         </div>
-                        <h1 className="font-semibold lg:text-xl">{item.title}</h1>
-                        <h2 className="text-gray-500 lg:text-lg">{item.desc}</h2>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
 
+            </div>
         </div>
     )
 }
