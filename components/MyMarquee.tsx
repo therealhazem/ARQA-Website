@@ -40,7 +40,7 @@ const MyMarquee = () => {
             </h2>
 
 
-            <div className="container mx-auto mt-6">
+            <div className="container mx-auto mt-8">
                 <Marquee
                     gradientWidth={gradwidth}
                     autoFill={true}
