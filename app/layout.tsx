@@ -33,7 +33,6 @@ export default function RootLayout({
         <Navbar />
         <Separator /> {/* Navbar Separator */}
         {children}
-        {/* <div className="h-[2000px]  bg-teal-100/50"></div> */}
         <Footer />
       </body>
     </html>
