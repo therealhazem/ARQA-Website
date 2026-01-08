@@ -42,8 +42,8 @@ const Categories = () => {
                 <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 items-center justify-between gap-4 mt-8">
                     {cards.map((item) => (
                         <div key={item.title} className="flex flex-col items-center justify-center border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200
-                    px-5 py-5 h-full bg-white gap-2">
-                            <div className="bg-myprimary/30 rounded-full text-dark-primary p-3 m-4">
+                    px-3 py-5 h-full bg-white gap-2">
+                            <div className="bg-myprimary/30 rounded-full text-dark-primary p-3 m-2">
                                 <item.icon width={36} height={36} />
                             </div>
                             <h1 className="font-semibold lg:text-xl">{item.title}</h1>

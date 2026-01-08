@@ -27,11 +27,11 @@ const Why = () => {
         <div className="w-full text-white font-poppins flex items-center justify-center p-4 mt-16 bg-linear-to-b from-dark-primary to-myprimary text-pretty">
 
             <div className="container mx-auto flex flex-col items-center justify-center py-8">
-                <div className="flex flex-col items-center justify-center lg:flex-row gap-8 lg:gap-14">
-                    <Image src="/Doctors.png" className="rounded-xl hover:shadow-lg/20 shadow-white transition-all duration-200 hover:translate-y-[-2px]" width={550} height={550} alt="Doctors" priority />
+                <div className="flex flex-col items-center justify-center xl:flex-row gap-8 lg:gap-14">
+                    <Image src="/Doctors.png" className="rounded-xl hover:shadow-lg/20 shadow-white transition-all duration-200 hover:translate-y-[-2px]" width={530} height={530} alt="Doctors" priority />
                     <div className="flex flex-col items-center justify-between text-center lg:gap-4 gap-3">
-                        <h1 className="lg:text-[4vw] text-[10vw] text-center font-bold ">Why Choose <span className="lg:text-[4.4vw] text-[11vw] font-noticia font-semibold tracking-wider"> ARQA ?</span> </h1>
-                        <h1 className="lg:text-[2.5vw] text-[6.5vw]">Trusted by Healthcare Professionals</h1>
+                        <h1 className="lg:text-[4vw] text-[8vw] text-center font-bold ">Why Choose <span className="lg:text-[4.4vw] text-[10vw] font-noticia font-semibold tracking-wider"> ARQA</span> </h1>
+                        <h1 className="lg:text-[2.5vw] text-[5.5vw]">Trusted by Healthcare Professionals</h1>
                         <h2 className="text-xl">Our commitment to quality, safety, and excellence has made us the preferred partner for healthcare professionals throughout Egypt and the region</h2>
                         <div className="flex flex-col lg:flex-row items-stretch justify-between w-full mt-4 gap-5">
                             {/* card */}

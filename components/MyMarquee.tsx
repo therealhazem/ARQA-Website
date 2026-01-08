@@ -51,7 +51,7 @@ const MyMarquee = () => {
                     {logos.map((img, index) => (
                         <div key={index} className="mx-5 max-md:mx-2 flex items-center justify-center">
                             <img
-                                className="grayscale-100 saturate-0 max-md:max-h-[20vw] max-md:max-w-[22vw] max-h-[6vw] max-w-[5vw] transition-all duration-500 object-contain"
+                                className="grayscale-100 saturate-0 max-md:max-h-[20vw] max-md:max-w-[22vw] max-lg:max-w-[13vw] max-lg:max-h-[15vw] max-h-[6vw] max-w-[5vw] transition-all duration-500 object-contain"
                                 alt={img.name}
                                 src={img.src}
                             />

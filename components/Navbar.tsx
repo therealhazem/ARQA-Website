@@ -16,10 +16,10 @@ import { Menu } from "lucide-react"
 
 const links = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/About" },
-    { name: "Products", href: "/Products" },
-    { name: "Knowledge Hub", href: "/Knowledge" },
-    { name: "Contact Us", href: "/Contact" }
+    { name: "About Us", href: "/about" },
+    { name: "Products", href: "/products" },
+    { name: "Knowledge Hub", href: "/knowledge" },
+    { name: "Contact Us", href: "/contact" }
 ]
 
 const Navbar = () => {

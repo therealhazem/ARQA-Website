@@ -5,7 +5,7 @@ import Link from "next/link"
 const Footer = () => {
     return (
         <footer className="w-full py-6 bg-dark-primary mt-16">
-            <div className="container mx-auto  flex flex-col md:flex-row md:items-start justify-between text-center md:text-start gap-6">
+            <div className="container mx-auto  flex flex-col md:flex-row md:items-start justify-between text-center md:text-start gap-6 p-4">
                 <Image src="ARQA Footer Logo.svg" className="w-52 self-center" width={0} height={0} alt="ARQA Footer Logo" />
                 <div className="text-white flex flex-col gap-3">
                     <h1 className="font-bold text-lg">Quick Links</h1>

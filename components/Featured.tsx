@@ -48,7 +48,7 @@ const products = [
 const Featured = () => {
     return (
         <div className='container mx-auto flex flex-col items-center text-center px-5 py-16 font-poppins text-pretty'>
-            <h1 className="font-poppins font-bold text-xl md:text-4xl">
+            <h1 className="font-poppins font-bold text-xl md:text-4xl/snug">
                 Featured Medical Supplies
             </h1>
             <h2 className="text-gray-400 lg:w-1/2 font-poppins text-base md:text-xl mt-1">
@@ -64,7 +64,7 @@ const Featured = () => {
             >
                 <CarouselContent>
                     {products.map((_, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 hover:drop-shadow-lg duration-200 transition-all py-6 rounded-2xl">
+                        <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/3 hover:drop-shadow-lg duration-200 transition-all py-6 rounded-2xl">
                             <div className="rounded-2xl">
                                 <Card className="p-0 rounded-2xl">
                                     <CardContent className="flex p-0 aspect-2/3 bg-gray-100 items-center justify-center rounded-2xl">
@@ -81,7 +81,7 @@ const Featured = () => {
                                                 />
                                             </div>
                                             <div className="flex flex-col text-start h-3/6 items-stretch justify-between p-[5%]">
-                                                <h1 className="text-xl lg:text-2xl font-semibold font-sans" >{_.name}</h1>
+                                                <h1 className="text-xl/snug lg:text-2xl font-semibold font-sans" >{_.name}</h1>
                                                 <h2 className="flex flex-col just lg:gap-3">
                                                     <span className="flex flex-row lg:text-lg"><Check className="text-teal-700" /> {_.prop[0]}</span>
                                                     <span className="flex flex-row lg:text-lg"><Check className="text-teal-700" /> {_.prop[1]}</span>
