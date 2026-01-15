@@ -2,15 +2,11 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
     Field,
-    FieldContent,
     FieldDescription,
-    FieldError,
     FieldGroup,
     FieldLabel,
     FieldLegend,
-    FieldSeparator,
     FieldSet,
-    FieldTitle,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -49,7 +45,7 @@ const cards = [
 const page = () => {
     return (
         <>
-
+            {/* Header of Contact us */}
             <div className="w-full text-white font-poppins bg-linear-to-t from-dark-primary to-myprimary
                     flex items-center justify-center p-4 mb-8">
                 <div className="container mx-auto w-[85%] py-7 flex flex-col items-center justify-center text-center">

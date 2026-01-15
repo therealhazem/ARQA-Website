@@ -1,14 +1,11 @@
 import {
     Carousel,
     CarouselContent,
-    CarouselItem,
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import { Card, CardContent } from "./ui/card"
-import Image from "next/image"
 import { Button } from "./ui/button"
-import { Check } from "lucide-react"
+import MyCard from "./MyCard"
 
 
 
@@ -64,37 +61,7 @@ const Featured = () => {
             >
                 <CarouselContent>
                     {products.map((_, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 xl:basis-1/3 hover:drop-shadow-lg duration-200 transition-all py-6 rounded-2xl">
-                            <div className="rounded-2xl">
-                                <Card className="p-0 rounded-2xl">
-                                    <CardContent className="flex p-0 aspect-2/3 bg-gray-100 items-center justify-center rounded-2xl">
-                                        <div className="w-full h-full flex flex-col ">
-                                            {/* Image section - 1/3 of card height */}
-                                            <div className="h-3/6 w-full relative overflow-hidden group">
-                                                <div className="absolute z-10 bg-dark-primary text-white rounded-full px-2 py-1 m-4">{_.type}</div>
-                                                <Image
-                                                    src={_.src}
-                                                    alt={_.name}
-                                                    fill
-                                                    className="object-cover rounded-t-2xl hover:shadow-lg transition-all duration-300 group-hover:scale-110"
-                                                    priority
-                                                />
-                                            </div>
-                                            <div className="flex flex-col text-start h-3/6 items-stretch justify-between p-[5%]">
-                                                <h1 className="text-xl/snug lg:text-2xl font-semibold font-sans" >{_.name}</h1>
-                                                <h2 className="flex flex-col just lg:gap-3">
-                                                    <span className="flex flex-row lg:text-lg"><Check className="text-teal-700" /> {_.prop[0]}</span>
-                                                    <span className="flex flex-row lg:text-lg"><Check className="text-teal-700" /> {_.prop[1]}</span>
-                                                    <span className="flex flex-row lg:text-lg"><Check className="text-teal-700" /> {_.prop[2]}</span>
-                                                </h2>
-                                                {/* <h3 className="text-lg font-semibold text-dark-primary">Contact for pricing</h3> */}
-                                                <Button className="bg-dark-primary hover:bg-myprimary hover:shadow-lg  cursor-pointer lg:text-lg lg:p-5">View Details</Button>
-                                            </div>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </div>
-                        </CarouselItem>
+                        <MyCard key={index} srcc={_.src} namee={_.name} propp={_.prop} typee={_.type} />
                     ))}
                 </CarouselContent>
                 <CarouselPrevious />

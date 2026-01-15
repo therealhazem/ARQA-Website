@@ -43,7 +43,7 @@ const Why = () => {
                                         <item.icon width={36} height={36} />
                                     </div>
                                     <h1 className="font-semibold lg:text-xl text-lg">{item.title}</h1>
-                                    <h2 className="lg:text-lg">{item.desc}</h2>
+                                    <h2>{item.desc}</h2>
                                 </div>
                             ))}
 

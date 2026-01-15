@@ -1,4 +1,4 @@
-import { Hand, ShieldPlusIcon, Award, BadgeCheck, TrendingUp } from "lucide-react"
+import { Hand, ShieldPlusIcon, Award, TrendingUp } from "lucide-react"
 
 const cards = [
     {
