@@ -1,0 +1,76 @@
+import { Card, CardContent } from "./ui/card"
+import Image from "next/image"
+import { Button } from "./ui/button"
+import { Check } from "lucide-react"
+
+type mytypess = {
+    srcc: string;
+    namee: string;
+    propp: string[];
+    key: number;
+    typee: string;
+};
+
+const ProductCard = ({ srcc, namee, propp, typee }: mytypess) => {
+    return (
+        <div className="md:basis-1/2 xl:basis-1/3 py-2">
+            <Card className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl">
+                <CardContent className="p-0 mt-[-30px]">
+                    <div className="flex flex-col h-full justify-between">
+
+                        {/* Image Section */}
+                        <div className="relative h-[250px] sm:h-[280px] lg:h-[300px] overflow-hidden group">
+                            <span className="absolute z-10 top-4 left-4 text-[0.7rem] sm:text-xs font-medium bg-dark-primary text-white rounded-full px-3 py-1">
+                                {typee}
+                            </span>
+
+                            <Image
+                                src={srcc}
+                                alt={namee}
+                                fill
+                                priority
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex flex-col justify-between mb-[-30px] gap-4 p-4 sm:p-5 lg:p-6">
+
+                            {/* Title */}
+                            <h1 className="font-semibold leading-snug text-start line-clamp-2
+                                            text-[clamp(1.05rem,2.5vw,1.35rem)]">
+                                {namee}
+                            </h1>
+
+                            {/* Features */}
+                            <ul className="flex flex-col gap-2">
+                                {propp.slice(0, 3).map((item, i) => (
+                                    <li
+                                        key={i}
+                                        className="flex items-start gap-2 text-gray-700
+                                                    text-[clamp(0.85rem,2vw,1.1rem)]"
+                                    >
+                                        <Check className="w-4 h-4 mt-0.5 text-teal-700 shrink-0" />
+                                        <span className="leading-snug">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            {/* Button */}
+                            <Button
+                                className="mt-2 w-full text-white bg-dark-primary hover:bg-myprimary
+                                    text-[clamp(0.9rem,4vw,1rem)] py-5 rounded-xl transition-all"
+                            >
+                                View Details
+                            </Button>
+
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+        </div>
+    );
+};
+
+
+export default ProductCard
