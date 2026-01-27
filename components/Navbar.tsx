@@ -32,7 +32,7 @@ const Navbar = () => {
 
                 {/* Normal Desktop mode > md */}
 
-                <Image src="ARQA Logo.svg" className="w-36 " width={0} height={0} alt="ARQA LOGO" />
+                <Image src="/ARQA Logo.svg" className="w-36 " width={0} height={0} alt="ARQA LOGO" />
 
                 <div className="hidden md:flex flex-row items-center justify-center gap-4">
                     {links.map(link => (
