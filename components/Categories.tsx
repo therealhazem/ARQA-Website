@@ -16,11 +16,6 @@ const cards = [
         title: "ISO Certified",
         desc: "Certified Highest Quality Standards for each product",
     },
-    // {
-    //     icon: BadgeCheck,
-    //     title: "100% Reliable",
-    //     desc: " Quality Products To Be Trusted",
-    // },
     {
         icon: TrendingUp,
         title: "Healthcare Partners",

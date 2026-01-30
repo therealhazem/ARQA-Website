@@ -1,0 +1,86 @@
+/* eslint-disable @next/next/no-img-element */
+"use client"
+import { Avatar } from '@radix-ui/react-avatar'
+import { useEffect, useState } from 'react'
+import Marquee from 'react-fast-marquee'
+import { AvatarBadge, AvatarFallback, AvatarImage } from './ui/avatar'
+
+
+const cards = [
+    {
+        name: "Shady Samir",
+        src: "https://github.com/shadcn.png",
+        title: "Premium Quality",
+        desc: "Premium nitrile, latex, and vinyl gloves and medical products",
+    },
+    {
+        name: "Max leiter",
+        src: "https://github.com/maxleiter.png",
+        title: "Patient Safety",
+        desc: "High-quality facemasks and protective equipment",
+    },
+    {
+        name: "Evil Rabbit",
+        src: "https://github.com/evilrabbit.png",
+        title: "ISO Certified",
+        desc: "Certified Highest Quality Standards for each product",
+    },
+    {
+        name: "Hazem Elgindy",
+        src: "https://github.com/therealhazem.png",
+        title: "Healthcare Partners",
+        desc: "Many Healthcare Partners Trusted Our Products",
+    },
+]
+
+const Testimonials = () => {
+
+    const [gradwidth, setgradwidth] = useState(330);
+    useEffect(() => {
+        const updatewidth = () => {
+            setgradwidth(window.innerWidth > 768 ? 330 : 150)
+        }
+        updatewidth();
+        window.addEventListener("resize", updatewidth);
+        return () => window.removeEventListener("resize", updatewidth);
+    }, [])
+
+
+    return (
+        <div className='container mx-auto flex flex-col items-center text-center px-5 pt-16'>
+            <h1 className="font-poppins font-bold text-xl md:text-4xl">
+                Testimonials
+            </h1>
+            <h2 className="text-gray-400 font-poppins text-base md:text-xl">
+                What our customers say about our products
+            </h2>
+
+
+            <Marquee
+                gradientWidth={gradwidth}
+                autoFill={true}
+                speed={10}
+                pauseOnHover={true}
+                gradient={true}
+            >
+                <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 items-center justify-between gap-4 mt-8">
+                    {cards.map((item) => (
+                        <div key={item.title} className="flex flex-col items-center justify-center border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200
+                    px-3 py-5 h-full bg-white gap-2">
+                            <Avatar>
+                                <AvatarImage className='rounded-full w-24' src={item.src} width={36} height={36} />
+                                <AvatarFallback>{item.name}</AvatarFallback>
+                                <AvatarBadge />
+                            </Avatar>
+                            <h1 className="font-semibold lg:text-xl">{item.title}</h1>
+                            <h2 className="text-gray-500 lg:text-lg">{item.desc}</h2>
+                        </div>
+                    ))}
+                </div>
+            </Marquee>
+
+        </div >
+    )
+}
+
+export default Testimonials

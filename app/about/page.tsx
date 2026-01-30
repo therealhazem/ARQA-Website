@@ -1,6 +1,7 @@
 import Certifications from "@/components/Certifications"
 import MandV from "@/components/MandV"
 import Numbers from "@/components/Numbers"
+import Testimonials from "@/components/Testimonials"
 
 const page = () => {
     return (
@@ -31,6 +32,8 @@ const page = () => {
             <MandV />
             <Numbers />
             <Certifications />
+            <Testimonials />
+
         </>
     )
 }
