@@ -5,6 +5,7 @@ import { Card, CardContent } from "./ui/card"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import { Check } from "lucide-react"
+import Link from "next/link"
 
 type mytypess = {
     srcc: string;
@@ -58,12 +59,14 @@ const MyCard = ({ srcc, namee, propp, typee }: mytypess) => {
                             </ul>
 
                             {/* Button */}
-                            <Button
-                                className="mt-2 w-full text-white bg-dark-primary hover:bg-myprimary
-                                    text-sm md:text-base py-5 rounded-xl transition-all"
-                            >
-                                View Details
-                            </Button>
+                            <Link href={"products/" + namee}>
+                                <Button
+                                    className="mt-2 w-full text-white bg-dark-primary hover:bg-myprimary
+                                text-sm md:text-base py-5 rounded-xl transition-all"
+                                >
+                                    View Details
+                                </Button>
+                            </Link>
 
                         </div>
                     </div>

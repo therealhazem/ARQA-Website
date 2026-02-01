@@ -2,6 +2,7 @@ import { Card, CardContent } from "./ui/card"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import { CalendarDays, ChevronRight } from "lucide-react"
+import Link from "next/link";
 
 type mytypess = {
     srcc: string;
@@ -63,15 +64,17 @@ const KnowledgeCards = ({ srcc, namee, propp, typee }: mytypess) => {
 
                             {/* Button sticks to bottom */}
                             <div className="mt-auto">
-                                <Button
-                                    className="w-full text-white bg-dark-primary hover:bg-myprimary
-                                               text-sm md:text-base py-5 rounded-xl transition-all"
-                                >
-                                    <div className="flex items-center justify-center gap-1">
-                                        Read More
-                                        <ChevronRight className="mt-[3px]" />
-                                    </div>
-                                </Button>
+                                <Link href={"/knowledge/" + namee}>
+                                    <Button
+                                        className="w-full text-white bg-dark-primary hover:bg-myprimary
+                                    text-sm md:text-base py-5 rounded-xl transition-all"
+                                    >
+                                        <div className="flex items-center justify-center gap-1">
+                                            Read More
+                                            <ChevronRight className="mt-[3px]" />
+                                        </div>
+                                    </Button>
+                                </Link>
                             </div>
 
                         </div>

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import ProductsGuide from "./ProductsGuide"
 import { Button } from "./ui/button"
 
@@ -47,8 +48,9 @@ const ProdGuide = () => {
                         <ProductsGuide key={index} namee={_.name} propp={_.prop} typee={_.type} desc={_.desc} icon={_.icon} />
                     ))}
                 </div>
-
-                <Button className=" bg-dark-primary hover:bg-myprimary hover:shadow-lg cursor-pointer lg:text-lg py-6 px-8 mt-4">Check Knowledge Hub</Button>
+                <Link href="/knowledge">
+                    <Button className=" bg-dark-primary hover:bg-myprimary hover:shadow-lg cursor-pointer lg:text-lg py-6 px-8 mt-4">Check Knowledge Hub</Button>
+                </Link>
             </div>
         </>
 

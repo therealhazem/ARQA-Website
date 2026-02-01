@@ -34,8 +34,9 @@ const Navbar = () => {
             <div className="container mx-auto flex flex-row items-center justify-between">
 
                 {/* Normal Desktop mode > md */}
-
-                <Image src="/ARQA Logo.svg" className="w-36 " width={0} height={0} alt="ARQA LOGO" />
+                <Link href="/">
+                    <Image src="/ARQA Logo.svg" className="w-36 " width={0} height={0} alt="ARQA LOGO" />
+                </Link>
 
                 <div className="hidden md:flex flex-row items-center justify-center gap-4">
                     {links.map(link => (
@@ -49,7 +50,7 @@ const Navbar = () => {
                 </div>
 
                 <Button className="hidden md:flex bg-myprimary font-bold hover:bg-dark-primary">
-                    <Link href="/" >Get Quote</Link>
+                    <Link href="/contact" >Get Quote</Link>
 
                 </Button>
 

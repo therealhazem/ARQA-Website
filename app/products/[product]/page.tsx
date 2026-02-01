@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { ProductCarousel } from "@/components/ui/productCarousel"
 import { Check } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const propp = ["Superior puncture resistance compared to latex",
     "Latex-free protection for sensitive users",
@@ -95,7 +96,9 @@ const page = () => {
                                 ))}
                             </ul>
                         </div>
-                        <Button className="w-full py-5 bg-dark-primary hover:bg-myprimary cursor-pointer">Get Quote</Button>
+                        <Link href="/contact" className="w-full">
+                            <Button className="w-full py-5 bg-dark-primary hover:bg-myprimary cursor-pointer">Get Quote</Button>
+                        </Link>
                     </div>
                 </div>
 

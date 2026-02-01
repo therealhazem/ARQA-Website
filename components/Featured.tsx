@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/carousel"
 import { Button } from "./ui/button"
 import MyCard from "./MyCard"
+import Link from "next/link"
 
 
 
@@ -67,8 +68,9 @@ const Featured = () => {
                 <CarouselPrevious />
                 <CarouselNext />
             </Carousel>
-
-            <Button className=" bg-dark-primary hover:bg-myprimary hover:shadow-lg cursor-pointer lg:text-lg py-6 px-8 mt-4">View All Products</Button>
+            <Link href="/products">
+                <Button className=" bg-dark-primary hover:bg-myprimary hover:shadow-lg cursor-pointer lg:text-lg py-6 px-8 mt-4">View All Products</Button>
+            </Link>
 
         </div>
     )

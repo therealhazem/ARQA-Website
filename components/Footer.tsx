@@ -6,7 +6,9 @@ const Footer = () => {
     return (
         <footer className="w-full py-16 md:py-20 bg-dark-primary mt-0">
             <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between text-center md:text-start gap-8 px-4 sm:px-5">
-                <Image src="/ARQA Footer Logo.svg" className="w-52 self-center" width={0} height={0} alt="ARQA Footer Logo" />
+                <Link href="/">
+                    <Image src="/ARQA Footer Logo.svg" className="w-52 self-center" width={0} height={0} alt="ARQA Footer Logo" />
+                </Link>
                 <div className="text-white flex flex-col gap-3">
                     <h3 className="card-title text-white text-lg">Quick Links</h3>
                     <Link className="hover:underline active:underline underline-offset-4" href="/">Home</Link>
@@ -17,11 +19,11 @@ const Footer = () => {
                 </div>
                 <div className="text-white flex flex-col gap-3">
                     <h3 className="card-title text-white text-lg">Products</h3>
-                    <Link className="hover:underline active:underline underline-offset-4" href="/gloves">Medical Gloves</Link>
-                    <Link className="hover:underline active:underline underline-offset-4" href="/masks">Face Masks</Link>
-                    <Link className="hover:underline active:underline underline-offset-4" href="/thermometers">Thermometers</Link>
-                    <Link className="hover:underline active:underline underline-offset-4" href="/tapes">Casting Tapes</Link>
-                    <Link className="hover:underline active:underline underline-offset-4" href="/depressors">Tongue Depressors</Link>
+                    <Link className="hover:underline active:underline underline-offset-4" href="/products/gloves">Medical Gloves</Link>
+                    <Link className="hover:underline active:underline underline-offset-4" href="/products/masks">Face Masks</Link>
+                    <Link className="hover:underline active:underline underline-offset-4" href="/products/thermometers">Thermometers</Link>
+                    <Link className="hover:underline active:underline underline-offset-4" href="/products/tapes">Casting Tapes</Link>
+                    <Link className="hover:underline active:underline underline-offset-4" href="/products/depressors">Tongue Depressors</Link>
                 </div>
                 <div className="text-white flex flex-col gap-3 items-center md:items-start">
                     <h3 className="card-title text-white text-lg">Contact Us</h3>
