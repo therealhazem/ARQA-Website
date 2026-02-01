@@ -4,12 +4,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { usePathname } from "next/navigation"
+import { useState } from "react"
 import clsx from "clsx";
 
 
 import {
     Sheet,
     SheetContent,
+    SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
@@ -24,6 +26,7 @@ const links = [
 
 const Navbar = () => {
     const Pathname = usePathname();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
         <nav className="w-full h-[66px] border-b-2 border-myprimary p-2
@@ -53,26 +56,33 @@ const Navbar = () => {
 
                 {/* Mobile Mode Menu */}
 
-                <Sheet >
+                <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                     <SheetTrigger asChild>
                         <Button className="bg-gray-200/60 text-black hover:bg-gray-300/60 md:hidden">
                             <Menu />
                         </Button>
                     </SheetTrigger>
 
-                    <SheetContent className="max-w-1/2 md:hidden">
+                    <SheetContent className="max-w-1/2 md:hidden" aria-describedby={undefined}>
+                        <SheetTitle className="sr-only">Navigation menu</SheetTitle>
                         <div className="mt-10 flex flex-col text-lg mx-4">
                             {links.map(link => (
-                                <Link className={clsx(
-                                    Pathname === link.href ?
-                                        "text-dark-primary font-semibold" :
-                                        "text-gray-500 font-semibold",
-                                    "hover:bg-myprimary hover:text-white border-dark-primary my-3 p-4 transition-all duration-300 rounded-lg")}
-                                    key={link.name} href={link.href} >{link.name}</Link>
+                                <Link
+                                    className={clsx(
+                                        Pathname === link.href ?
+                                            "text-dark-primary font-semibold" :
+                                            "text-gray-500 font-semibold",
+                                        "hover:bg-myprimary hover:text-white border-dark-primary my-3 p-4 transition-all duration-300 rounded-lg block")}
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {link.name}
+                                </Link>
                             ))}
 
-                            <Button className=" text-lg p-6 bg-myprimary mt-4 font-semibold hover:bg-dark-primary">
-                                <Link href="/" >Get Quote</Link>
+                            <Button className="text-lg p-6 bg-myprimary mt-4 font-semibold hover:bg-dark-primary" asChild>
+                                <Link href="/" onClick={() => setMobileMenuOpen(false)}>Get Quote</Link>
                             </Button>
                         </div>
                     </SheetContent>

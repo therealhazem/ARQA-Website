@@ -30,17 +30,17 @@ const MyMarquee = () => {
 
 
     return (
-        <div className='container mx-auto flex flex-col items-center text-center px-5 pt-16'>
-            <h1 className="font-poppins font-bold text-xl md:text-4xl">
+        <div className="container mx-auto flex flex-col items-center text-center section-padding">
+            <h1 className="section-title">
                 Trusted By
             </h1>
 
-            <h2 className="text-gray-400 font-poppins text-base md:text-xl">
+            <p className="section-subtitle">
                 Other Great Businesses That Trusted Our Products
-            </h2>
+            </p>
 
 
-            <div className="container mx-auto mt-8">
+            <div className="container mx-auto mt-10">
                 <Marquee
                     gradientWidth={gradwidth}
                     autoFill={true}

@@ -46,27 +46,26 @@ const page = () => {
     return (
         <>
             {/* Header of Contact us */}
-            <div className="w-full text-white font-poppins bg-linear-to-t from-dark-primary to-myprimary
-                    flex items-center justify-center p-4 mb-8">
-                <div className="container mx-auto w-[85%] py-7 flex flex-col items-center justify-center text-center">
-                    <h1 className="font-semibold pb-2 text-3xl/snug xl:text-5xl/snug">Contact Us</h1>
-                    <h2 className="text-white/90 xl:text-xl">Get in touch with our team for inquiries, quotes, or support</h2>
+            <div className="w-full text-white bg-linear-to-t from-dark-primary to-myprimary section-padding flex items-center justify-center">
+                <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
+                    <h1 className="section-title text-white">Contact Us</h1>
+                    <p className="header-subtitle text-white/90">Get in touch with our team for inquiries, quotes, or support</p>
                 </div>
             </div>
 
-            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between p-4 gap-3 md:gap-6">
+            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between section-padding pt-0 gap-6 md:gap-8">
                 {/* Contacts */}
                 <div className="flex flex-col h-full w-full md:max-w-[40%] gap-3 md:gap-6">
 
                     {cards.map((item) => (
-                        <div key={item.title} className="flex flex-row items-center w-full border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200 bg-white gap-2 p-[7%]">
+                        <div key={item.title} className="flex flex-row items-center w-full border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200 bg-white gap-2 p-6 md:p-8">
                             <div className="flex items-center justify-start w-full">
                                 <div className="bg-myprimary/30 rounded-full text-dark-primary my-1 md:my-2 mr-5 p-3">
                                     <item.icon width={36} height={36} />
                                 </div>
                                 <div className="flex flex-col items-start justify-start">
-                                    <h1 className="font-semibold text-lg lg:text-xl">{item.title}</h1>
-                                    <h2 className="text-gray-500 lg:text-lg whitespace-pre-line">{item.desc}</h2>
+                                    <h3 className="card-title">{item.title}</h3>
+                                    <p className="card-body whitespace-pre-line">{item.desc}</p>
                                 </div>
                             </div>
                         </div>
@@ -76,19 +75,19 @@ const page = () => {
                 {/* Form */}
                 <form className="border-2 rounded-2xl p-6 md:p-8 bg-white shadow-sm w-full">
                     <FieldSet>
-                        <FieldLegend className="font-bold text-gray-800">
-                            <span className="text-lg md:text-2xl">Send us a Message</span>
+                        <FieldLegend className="card-title text-gray-800 text-lg md:text-xl">
+                            <span className="card-title"> Send us a Message </span>
                         </FieldLegend>
 
-                        <FieldDescription className="text-gray-600 md:text-lg mt-">
+                        <FieldDescription className="card-body mt-1">
                             Request a Quote or Send us a Message
                         </FieldDescription>
 
-                        <FieldGroup className=" space-y-4 text-lg md:text-xl">
+                        <FieldGroup className="space-y-4">
 
                             {/* Name - Required */}
                             <Field className="m-0">
-                                <FieldLabel htmlFor="name" className="font-semibold md:text-lg text-gray-800">
+                                <FieldLabel htmlFor="name" className="form-title text-gray-800">
                                     Full name<span className="text-red-600 font-bold">*</span>
                                 </FieldLabel>
                                 <Input
@@ -102,7 +101,7 @@ const page = () => {
 
                             {/* Company */}
                             <Field className="m-0">
-                                <FieldLabel htmlFor="company" className="font-semibold md:text-lg text-gray-800">
+                                <FieldLabel htmlFor="company" className="form-title text-gray-800">
                                     Company / Facility
                                 </FieldLabel>
                                 <Input
@@ -115,7 +114,7 @@ const page = () => {
 
                             {/* Email - Required */}
                             <Field className="m-0">
-                                <FieldLabel htmlFor="email" className="font-semibold md:text-lg text-gray-800">
+                                <FieldLabel htmlFor="email" className="form-title text-gray-800">
                                     Email Address <span className="text-red-600 font-bold">*</span>
                                 </FieldLabel>
                                 <Input
@@ -129,7 +128,7 @@ const page = () => {
 
                             {/* Phone */}
                             <Field className="m-0">
-                                <FieldLabel htmlFor="phone" className="font-semibold md:text-lg text-gray-800">
+                                <FieldLabel htmlFor="phone" className="form-title text-gray-800">
                                     Phone Number / Whatsapp Number
                                 </FieldLabel>
                                 <Input
@@ -142,7 +141,7 @@ const page = () => {
 
                             {/* Feedback */}
                             <Field className="m-0">
-                                <FieldLabel htmlFor="feedback" className="font-semibold md:text-lg text-gray-800">
+                                <FieldLabel htmlFor="feedback" className="form-title text-gray-800">
                                     Message<span className="text-red-600 font-bold">*</span>
                                 </FieldLabel>
                                 <Textarea
@@ -164,7 +163,11 @@ const page = () => {
                 </form>
             </div >
             {/* Map location */}
-            <div className="container mx-auto px-4 pt-4 md:pt-8">
+            <div className="container mx-auto section-padding pt-0">
+                <h1 className="section-title mb-8">
+                    Our Company Location
+                </h1>
+
                 <Card className="w-full py-0  max-h-[500px]">
                     <CardContent className="p-0">
                         <iframe

@@ -83,16 +83,15 @@ const page = () => {
     return (
         <>
             {/* Header of Products Page */}
-            <div className="w-full text-white font-poppins bg-linear-to-t from-dark-primary to-myprimary
-                    flex items-center justify-center p-4 mb-8">
-                <div className="container mx-auto w-[85%] py-7 flex flex-col items-center justify-center text-center">
-                    <h1 className="font-semibold pb-2 text-3xl/snug xl:text-5xl/snug">Our Products</h1>
-                    <h2 className="text-white/90 xl:text-xl">Comprehensive range of medical supplies trusted by healthcare professionals worldwide</h2>
+            <div className="w-full text-white bg-linear-to-t from-dark-primary to-myprimary section-padding flex items-center justify-center">
+                <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
+                    <h1 className="section-title text-white">Our Products</h1>
+                    <p className="header-subtitle text-white/90">Comprehensive range of medical supplies trusted by healthcare professionals worldwide</p>
                 </div>
             </div>
 
 
-            <div className="container mx-auto px-4 flex flex-col items-center justify-between gap-4">
+            <div className="container mx-auto section-padding pt-0 flex flex-col items-center justify-between gap-4">
                 {/* Search Part */}
                 <div className="w-full items-center justify-between">
                     <ButtonGroup className="w-full">
@@ -105,7 +104,7 @@ const page = () => {
                     <div className="md:w-1/5 w-full">
                         {/* sticky container */}
                         <div className="sticky top-24 flex flex-col gap-2 rounded-xl border p-4 bg-white py-6">
-                            <h3 className="mb-2 font-semibold text-gray-700 md:text-lg">
+                            <h3 className="mb-2 card-title text-gray-700">
                                 Product Categories
                             </h3>
 

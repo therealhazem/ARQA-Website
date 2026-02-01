@@ -33,16 +33,16 @@ const ProdGuide = () => {
     return (
         <>
             {/* Header of Products Guide */}
-            <div className="w-full font-poppins bg-gray-50 flex items-center justify-center p-4 mb-8 my-6">
-                <div className="container mx-auto w-[85%] py-7 flex flex-col items-center justify-center text-center">
-                    <h1 className="font-semibold pb-2 text-3xl/snug xl:text-5xl/snug">Product Guides</h1>
-                    <h2 className="text-gray-500 xl:text-xl">Expert insights and detailed information about our medical supply categories</h2>
+            <div className="w-full bg-gray-50 section-padding flex items-center justify-center">
+                <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
+                    <h1 className="section-title">Product Guides</h1>
+                    <p className="section-subtitle">Expert insights and detailed information about our medical supply categories</p>
                 </div>
             </div>
 
-            <div className="container mx-auto flex flex-col items-center gap-5">
+            <div className="container mx-auto flex flex-col items-center gap-5 section-padding pt-0">
                 {/* Products Guide Cards */}
-                <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 px-4 items-stretch">
+                <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
                     {Guide.map((_, index) => (
                         <ProductsGuide key={index} namee={_.name} propp={_.prop} typee={_.type} desc={_.desc} icon={_.icon} />
                     ))}

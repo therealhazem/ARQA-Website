@@ -3,17 +3,17 @@ import { Button } from "./ui/button"
 
 const Expert = () => {
     return (
-        <div className="w-full font-poppins bg-gray-50 flex items-center justify-center p-4 mb-8 my-6">
-            <div className="container mx-auto w-[85%] py-7 flex flex-col items-center justify-center text-center">
-                <h1 className="font-semibold pb-2 text-3xl/snug xl:text-5xl/snug">
+        <div className="w-full bg-gray-50 section-padding flex items-center justify-center">
+            <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
+                <h1 className="section-title">
                     Need Expert Advice?
                 </h1>
 
-                <h2 className="text-gray-500 xl:text-xl pb-2">
+                <p className="section-subtitle pb-2">
                     Our team of medical supply experts is ready to help you find the perfect products for your facility
-                </h2>
+                </p>
 
-                <div className="mt-2">
+                <div className="mt-4">
                     <Button
                         asChild
                         className="text-white bg-dark-primary hover:bg-myprimary

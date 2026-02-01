@@ -65,16 +65,15 @@ const Page = () => {
     return (
         <>
             {/* Header of Knowledge Hub */}
-            <div className="w-full text-white font-poppins bg-linear-to-t from-dark-primary to-myprimary
-                    flex items-center justify-center p-4 mb-8">
-                <div className="container mx-auto w-[85%] py-7 flex flex-col items-center justify-center text-center">
-                    <h1 className="font-semibold pb-2 text-3xl/snug xl:text-5xl/snug">Knowledge Hub</h1>
-                    <h2 className="text-white/90 xl:text-xl">Expert insights and guides to help you make informed decisions about medical supplies</h2>
+            <div className="w-full text-white bg-linear-to-t from-dark-primary to-myprimary section-padding flex items-center justify-center">
+                <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
+                    <h1 className="section-title text-white">Knowledge Hub</h1>
+                    <p className="header-subtitle text-white/90">Expert insights and guides to help you make informed decisions about medical supplies</p>
                 </div>
             </div>
 
             {/* Knowledge Cards */}
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-4 items-stretch">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-4 sm:px-5 pt-10 md:pt-12 pb-16 md:pb-20 items-stretch">
                 {products.map((_, index) => (
                     <KnowledgeCards key={index} srcc={_.src} namee={_.name} propp={_.prop} typee={_.type} />
                 ))}
@@ -82,15 +81,15 @@ const Page = () => {
 
 
             {/* Header of Products Guide */}
-            <div className="w-full font-poppins bg-gray-50 flex items-center justify-center p-4 mb-8 my-6">
-                <div className="container mx-auto w-[85%] py-7 flex flex-col items-center justify-center text-center">
-                    <h1 className="font-semibold pb-2 text-3xl/snug xl:text-5xl/snug">Product Guides</h1>
-                    <h2 className="text-gray-500 xl:text-xl">Expert insights and detailed information about our medical supply categories</h2>
+            <div className="w-full bg-gray-50 section-padding flex items-center justify-center">
+                <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
+                    <h1 className="section-title">Product Guides</h1>
+                    <p className="section-subtitle">Expert insights and detailed information about our medical supply categories</p>
                 </div>
             </div>
 
             {/* Products Guide Cards */}
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 px-4 items-stretch">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 px-4 sm:px-5 pt-10 md:pt-12 pb-16 md:pb-20 items-stretch">
                 {Guide.map((_, index) => (
                     <ProductsGuide key={index} namee={_.name} propp={_.prop} typee={_.type} desc={_.desc} icon={_.icon} />
                 ))}

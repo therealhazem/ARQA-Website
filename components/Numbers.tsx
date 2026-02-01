@@ -21,14 +21,14 @@ const cards = [
 
 const Numbers = () => {
     return (
-        <div className="w-full bg-linear-to-t from-dark-primary to-myprimary/85">
+        <div className="w-full bg-linear-to-t from-dark-primary to-myprimary/85 section-padding">
 
-            <div className='container mx-auto px-4 py-16'>
-                <div className="text-white flex flex-row justify-between items-start text-center gap-[4%]">
+            <div className="container mx-auto">
+                <div className="text-white flex flex-row flex-wrap justify-between items-start text-center gap-6 md:gap-8">
                     {cards.map((item) => (
-                        <div key={item.title}>
-                            <h1 className="font-bold text-[7.5vw] lg:text-[3vw]">{item.title}</h1>
-                            <h2 className="lg:text-[1vw] leading-5 text-white/80">{item.desc}</h2>
+                        <div key={item.title} className="flex-1 min-w-[120px]">
+                            <p className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{item.title}</p>
+                            <p className="text-sm md:text-base lg:text-lg leading-snug text-white/80 mt-1">{item.desc}</p>
                         </div>
                     ))}
                 </div>

@@ -19,35 +19,35 @@ const cards = [
 
 const Certifications = () => {
     return (
-        <div className="w-full bg-white">
-            <div className="container mx-auto flex flex-col items-center text-center px-5 pt-14">
+        <div className="w-full bg-white section-padding">
+            <div className="container mx-auto flex flex-col items-center text-center">
 
-                <h1 className="font-poppins font-bold text-xl md:text-4xl">
+                <h1 className="section-title">
                     Quality & Certifications
                 </h1>
 
-                <h2 className="text-gray-500 font-poppins mt-4 md:text-xl md:w-[70%]">
+                <p className="section-subtitle max-w-3xl">
                     All ARQA products meet or exceed international quality standards.
                     We work exclusively with ISO-certified manufacturers and ensure every product complies
                     with relevant healthcare regulations including FDA, CE Mark, and local Egyptian healthcare standards.
-                </h2>
+                </p>
 
                 <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 
-                items-stretch auto-rows-fr w-full gap-4 mt-8">
+                items-stretch auto-rows-fr w-full gap-4 mt-10">
 
                     {cards.map((item) => (
                         <div
                             key={item.title}
                             className="h-full flex flex-col items-center justify-center 
                             border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 
-                            transition-all duration-200 bg-white gap-2 p-[7%]"
+                            transition-all duration-200 bg-white gap-2 p-6 md:p-8"
                         >
-                            <h1 className="font-semibold text-dark-primary text-[7vw] md:text-[2.3vw]">
+                            <h3 className="font-poppins font-semibold text-dark-primary text-xl md:text-2xl">
                                 {item.title}
-                            </h1>
-                            <h2 className="text-gray-700 text-base md:text-lg">
+                            </h3>
+                            <p className="card-body text-gray-700">
                                 {item.desc}
-                            </h2>
+                            </p>
                         </div>
                     ))}
 

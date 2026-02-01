@@ -44,11 +44,11 @@ const products = [
 
 const Featured = () => {
     return (
-        <div className='container mx-auto flex flex-col items-center text-center px-5 py-16 font-poppins text-pretty'>
-            <h1 className="font-poppins font-bold text-xl md:text-4xl/snug">
+        <div className="container mx-auto flex flex-col items-center text-center section-padding text-pretty">
+            <h1 className="section-title">
                 Featured Medical Supplies
             </h1>
-            <h2 className="text-gray-400 lg:w-1/2 font-poppins text-base md:text-xl mt-1">
+            <h2 className="section-subtitle max-w-2xl">
                 Discover our most trusted medical supplies, carefully selected to meet the highest healthcare standards and designed for professional use
             </h2>
 
@@ -57,7 +57,7 @@ const Featured = () => {
                 opts={{
                     align: "start",
                 }}
-                className="w-[80%] lg:w-[90%] mt-8"
+                className="w-[80%] lg:w-[90%] mt-10"
             >
                 <CarouselContent>
                     {products.map((_, index) => (

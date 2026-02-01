@@ -72,19 +72,16 @@ const page = () => {
                         {/* Categ */}
                         <span className="font-medium text-sm bg-dark-primary text-white rounded-md px-3 py-1"> Gloves </span>
                         {/* Product Name */}
-                        <h1 className="font-poppins font-bold leading-snug text-start line-clamp-2
-                                            text-[clamp(1.35rem,2.5vw,2.5rem)]">
+                        <h1 className="product-title text-2xl md:text-3xl leading-snug text-start line-clamp-2">
                             Nitrile Gloves - Professional Grade
                         </h1>
                         {/* Product Description */}
-                        <p className="text-gray-500 font-poppins text-base md:text-xl">
+                        <p className="card-body text-base md:text-lg">
                             Our professional-grade nitrile gloves provide superior protection and comfort for healthcare professionals. Made from high-quality synthetic rubber, these gloves offer excellent puncture resistance and chemical protection while remaining latex-free to prevent allergic reactions.
                         </p>
                         {/* Key Features */}
                         <div className="flex flex-col gap-3">
-                            <h2 className="font-semibold leading-snug text-start line-clamp-2
-                                            text-[clamp(1.25rem,2.5vw,1.6rem)]
-                                            text-gray-800">
+                            <h2 className="card-title text-lg md:text-xl text-gray-800">
                                 Key Features
                             </h2>
                             <ul className="flex flex-col gap-2">

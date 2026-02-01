@@ -35,28 +35,27 @@ const KnowledgeCards = ({ srcc, namee, propp, typee }: mytypess) => {
                         <div className="flex flex-col flex-1 justify-between gap-4 p-4 sm:p-5 lg:p-6 -mb-7">
 
                             {/* Props */}
-                            <div className="flex flex-row gap-2 text-[0.85rem]">
+                            <div className="flex flex-row gap-2 text-sm">
                                 <span className="font-medium bg-dark-primary text-white rounded-md px-3 py-1">
                                     {typee}
                                 </span>
-                                <span className="flex items-center gap-1 text-gray-600">
+                                <span className="flex items-center gap-1 card-body">
                                     <CalendarDays className="w-5" />
                                     <span>March 15, 2024</span>
                                 </span>
                             </div>
 
                             {/* Title */}
-                            <h1 className="font-semibold leading-snug text-start line-clamp-2
-                                           text-[clamp(1.05rem,2.5vw,1.35rem)]
+                            <h3 className="card-title leading-snug text-start line-clamp-2
                                            group-hover:text-myprimary
                                            transition-colors duration-300">
                                 {namee}
-                            </h1>
+                            </h3>
 
                             {/* Features */}
                             <ul className="flex flex-col gap-2">
                                 {propp.slice(0, 3).map((item, i) => (
-                                    <li key={i} className="text-gray-700 text-[clamp(0.85rem,2vw,1.1rem)]">
+                                    <li key={i} className="card-body text-gray-600">
                                         {item}
                                     </li>
                                 ))}
@@ -66,7 +65,7 @@ const KnowledgeCards = ({ srcc, namee, propp, typee }: mytypess) => {
                             <div className="mt-auto">
                                 <Button
                                     className="w-full text-white bg-dark-primary hover:bg-myprimary
-                                               text-[clamp(0.9rem,4vw,1rem)] py-5 rounded-xl transition-all"
+                                               text-sm md:text-base py-5 rounded-xl transition-all"
                                 >
                                     <div className="flex items-center justify-center gap-1">
                                         Read More

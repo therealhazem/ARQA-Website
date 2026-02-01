@@ -47,13 +47,13 @@ const Testimonials = () => {
 
 
     return (
-        <div className='container mx-auto flex flex-col items-center text-center px-5 pt-16'>
-            <h1 className="font-poppins font-bold text-xl md:text-4xl">
+        <div className="container mx-auto flex flex-col items-center text-center section-padding">
+            <h1 className="section-title">
                 Testimonials
             </h1>
-            <h2 className="text-gray-400 font-poppins text-base md:text-xl">
+            <p className="section-subtitle">
                 What our customers say about our products
-            </h2>
+            </p>
 
 
             <Marquee
@@ -63,17 +63,17 @@ const Testimonials = () => {
                 pauseOnHover={true}
                 gradient={true}
             >
-                <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 items-center justify-between gap-4 mt-8">
+                <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 items-center justify-between gap-4 mt-10">
                     {cards.map((item) => (
                         <div key={item.title} className="flex flex-col items-center justify-center border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200
                     px-3 py-5 h-full bg-white gap-2">
                             <Avatar>
-                                <AvatarImage className='rounded-full w-24' src={item.src} width={36} height={36} />
+                                <AvatarImage className="rounded-full w-24" src={item.src} width={36} height={36} />
                                 <AvatarFallback>{item.name}</AvatarFallback>
                                 <AvatarBadge />
                             </Avatar>
-                            <h1 className="font-semibold lg:text-xl">{item.title}</h1>
-                            <h2 className="text-gray-500 lg:text-lg">{item.desc}</h2>
+                            <h3 className="card-title">{item.title}</h3>
+                            <p className="card-body text-center">{item.desc}</p>
                         </div>
                     ))}
                 </div>

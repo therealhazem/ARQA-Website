@@ -22,7 +22,7 @@ const Hero = () => {
                     Premium Medical Supplies for Egypt&apos;s Healthcare Professionals
                 </h1>
                 <h2 className="
-                text-gray-300 font-poppins text-pretty
+                text-white/90 font-poppins text-pretty
                 text-base/snug text-start
                 xl:text-[1.2vw]/relaxed md:text-base/snug md:text-start">
                     Delivering premium medical products to healthcare professionals across Egypt and beyond. Quality you can trust, service you can rely on.

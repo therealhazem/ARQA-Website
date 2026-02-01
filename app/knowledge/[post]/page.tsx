@@ -23,33 +23,32 @@ const page = () => {
                             </span>
                         </div>
                         {/* Product Name */}
-                        <h1 className="font-poppins font-bold leading-snug text-start line-clamp-2
-                                            text-[clamp(1.35rem,2.5vw,2.5rem)]">
+                        <h1 className="product-title text-2xl md:text-3xl leading-snug text-start line-clamp-2">
                             Nitrile Gloves - Professional Grade
                         </h1>
                         {/* Product Description */}
-                        <p className="text-gray-600 font-poppins text-base md:text-xl">
+                        <p className="card-body text-gray-600 text-base md:text-lg">
                             Our professional-grade nitrile gloves provide superior protection and comfort for healthcare professionals. Made from high-quality synthetic rubber, these gloves offer excellent puncture resistance and chemical protection while remaining latex-free to prevent allergic reactions.
                         </p>
-                        <p className="text-gray-600 font-poppins text-base md:text-xl">
+                        <p className="card-body text-gray-600 text-base md:text-lg">
                             Our professional-grade nitrile gloves provide superior protection and comfort for healthcare professionals. Made from high-quality synthetic rubber, these gloves offer excellent puncture resistance and chemical protection while remaining latex-free to prevent allergic reactions.
                         </p>
-                        <p className="text-gray-600 font-poppins text-base md:text-xl">
+                        <p className="card-body text-gray-600 text-base md:text-lg">
                             Our professional-grade nitrile gloves provide superior protection and comfort for healthcare professionals. Made from high-quality synthetic rubber, these gloves offer excellent puncture resistance and chemical protection while remaining latex-free to prevent allergic reactions.
                         </p>
-                        <p className="text-gray-600 font-poppins text-base md:text-xl">
+                        <p className="card-body text-gray-600 text-base md:text-lg">
                             Our professional-grade nitrile gloves provide superior protection and comfort for healthcare professionals. Made from high-quality synthetic rubber, these gloves offer excellent puncture resistance and chemical protection while remaining latex-free to prevent allergic reactions.
                         </p>
-                        <p className="text-gray-600 font-poppins text-base md:text-xl">
+                        <p className="card-body text-gray-600 text-base md:text-lg">
                             Our professional-grade nitrile gloves provide superior protection and comfort for healthcare professionals. Made from high-quality synthetic rubber, these gloves offer excellent puncture resistance and chemical protection while remaining latex-free to prevent allergic reactions.
                         </p>
-                        <p className="text-gray-600 font-poppins text-base md:text-xl">
+                        <p className="card-body text-gray-600 text-base md:text-lg">
                             Our professional-grade nitrile gloves provide superior protection and comfort for healthcare professionals. Made from high-quality synthetic rubber, these gloves offer excellent puncture resistance and chemical protection while remaining latex-free to prevent allergic reactions.
                         </p>
-                        <p className="text-gray-600 font-poppins text-base md:text-xl">
+                        <p className="card-body text-gray-600 text-base md:text-lg">
                             Our professional-grade nitrile gloves provide superior protection and comfort for healthcare professionals. Made from high-quality synthetic rubber, these gloves offer excellent puncture resistance and chemical protection while remaining latex-free to prevent allergic reactions.
                         </p>
-                        <p className="text-gray-600 font-poppins text-base md:text-xl">
+                        <p className="card-body text-gray-600 text-base md:text-lg">
                             Our professional-grade nitrile gloves provide superior protection and comfort for healthcare professionals. Made from high-quality synthetic rubber, these gloves offer excellent puncture resistance and chemical protection while remaining latex-free to prevent allergic reactions.
                         </p>
 

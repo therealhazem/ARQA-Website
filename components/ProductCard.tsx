@@ -37,18 +37,16 @@ const ProductCard = ({ srcc, namee, propp, typee }: mytypess) => {
                         <div className="flex flex-col justify-between mb-[-30px] gap-4 p-4 sm:p-5 lg:p-6">
 
                             {/* Title */}
-                            <h1 className="font-semibold leading-snug text-start line-clamp-2
-                                            text-[clamp(1.05rem,2.5vw,1.35rem)]">
+                            <h3 className="card-title leading-snug text-start line-clamp-2">
                                 {namee}
-                            </h1>
+                            </h3>
 
                             {/* Features */}
                             <ul className="flex flex-col gap-2">
                                 {propp.slice(0, 3).map((item, i) => (
                                     <li
                                         key={i}
-                                        className="flex items-start gap-2 text-gray-700
-                                                    text-[clamp(0.85rem,2vw,1.1rem)]"
+                                        className="flex items-start gap-2 card-body text-gray-600"
                                     >
                                         <Check className="w-4 h-4 mt-0.5 text-teal-700 shrink-0" />
                                         <span className="leading-snug">{item}</span>
@@ -59,7 +57,7 @@ const ProductCard = ({ srcc, namee, propp, typee }: mytypess) => {
                             {/* Button */}
                             <Button
                                 className="mt-2 w-full text-white bg-dark-primary hover:bg-myprimary
-                                    text-[clamp(0.9rem,4vw,1rem)] py-5 rounded-xl transition-all"
+                                    text-sm md:text-base py-5 rounded-xl transition-all"
                             >
                                 View Details
                             </Button>
