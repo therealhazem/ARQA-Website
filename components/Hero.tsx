@@ -1,17 +1,20 @@
-import Image from "next/image"
 import { Button } from "./ui/button"
 
 const Hero = () => {
     return (
         <div className="relative w-full h-[85vw] md:h-[40vw] overflow-hidden">
-            <Image
-                src="/Hero Doctors.svg"
-                alt="Hero"
-                className="object-cover object-top"
-                fill
-                priority
+
+
+            <video
+                src="https://res.cloudinary.com/dcpyxsfh2/video/upload/v1770069172/ARQA_HERO_VIDEO_r5gn1l.mp4"
+                className="absolute inset-0 h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
             />
-            <div className="absolute inset-0 bg-myprimary/65 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-myprimary mix-blend-multiply"></div>
 
             <div className="absolute z-10 flex flex-col items-start justify-center p-5 md:p-14 h-full w-full md:w-[60%] gap-3">
                 <h1 className="
