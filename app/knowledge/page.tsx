@@ -2,6 +2,7 @@ import Expert from "@/components/Expert"
 import Featured from "@/components/Featured"
 import KnowledgeCards from "@/components/KnowledgeCards"
 import ProductsGuide from "@/components/ProductsGuide"
+import Image from "next/image"
 
 const products = [
     {
@@ -64,13 +65,23 @@ const Guide = [
 const Page = () => {
     return (
         <>
-            {/* Header of Knowledge Hub */}
-            <div className="w-full text-white bg-linear-to-t from-dark-primary to-myprimary section-padding flex items-center justify-center">
-                <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
+
+            {/* Hero section */}
+            <div className="relative w-full h-[50vw] md:h-[20vw] overflow-hidden">
+                <Image
+                    src="/Media/im2.jpg"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    width={10000}
+                    height={10000}
+                    alt="hero cover"
+                />
+                <div className="absolute inset-0 bg-dark-primary mix-blend-multiply"></div>
+                <div className="absolute z-10 flex flex-col items-center justify-center p-5 md:p-14 h-full w-full gap-3">
                     <h1 className="section-title text-white">Knowledge Hub</h1>
                     <p className="header-subtitle text-white/90">Expert insights and guides to help you make informed decisions about medical supplies</p>
                 </div>
             </div>
+
 
             {/* Knowledge Cards */}
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-4 sm:px-5 pt-10 md:pt-12 pb-16 md:pb-20 items-stretch">

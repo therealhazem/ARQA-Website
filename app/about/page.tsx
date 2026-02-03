@@ -2,23 +2,34 @@ import Certifications from "@/components/Certifications"
 import MandV from "@/components/MandV"
 import Numbers from "@/components/Numbers"
 import Testimonials from "@/components/Testimonials"
+import Image from "next/image"
 
 const page = () => {
     return (
         <>
             {/* Hero section */}
-            <div className="w-full text-white bg-linear-to-r from-dark-primary to-myprimary/65 section-padding flex items-center justify-center">
-                <div className="container mx-auto text-center max-w-3xl">
+            <div className="relative w-full h-[50vw] md:h-[20vw] overflow-hidden">
+                <Image
+                    src="/Media/im9.jpg"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    width={10000}
+                    height={10000}
+                    alt="hero cover"
+                />
+                <div className="absolute inset-0 bg-dark-primary mix-blend-multiply"></div>
+                <div className="absolute z-10 flex flex-col items-center justify-center p-5 md:p-14 h-full w-full gap-3">
                     <h1 className="section-title text-white">About ARQA Medical</h1>
                     <p className="header-subtitle mt-2">Over three decades of trusted partnership with healthcare professionals worldwide</p>
                 </div>
             </div>
+
+
             {/* Our Story Section */}
             <div className="container mx-auto flex flex-col items-center justify-center section-padding">
                 <h1 className="section-title">
                     Our Story
                 </h1>
-                <div className="section-subtitle max-w-3xl text-pretty leading-relaxed mt-4">
+                <div className="section-subtitle max-w-5xl text-pretty leading-relaxed mt-4">
                     <p>Founded over 30 years ago, ARQA Medical Import & Export has grown from a small local distributor to become a trusted name in medical supplies across the region and beyond. Our journey began with a simple mission: to provide healthcare professionals with reliable, high-quality medical products they can depend on.</p>
                     <br />
                     <p>Through decades of experience, we&apos;ve built strong relationships with leading manufacturers and healthcare institutions worldwide. This network allows us to source the finest medical supplies while maintaining competitive pricing and consistent availability.</p>

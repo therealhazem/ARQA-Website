@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ButtonGroup } from "@/components/ui/button-group"
 import { Input } from "@/components/ui/input"
 import { SearchIcon } from "lucide-react"
+import Image from "next/image"
 import { useState } from "react"
 
 
@@ -82,9 +83,18 @@ const page = () => {
     const [active, setActive] = useState("Gloves");
     return (
         <>
-            {/* Header of Products Page */}
-            <div className="w-full text-white bg-linear-to-t from-dark-primary to-myprimary section-padding flex items-center justify-center">
-                <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
+
+            {/* Hero section */}
+            <div className="relative w-full h-[50vw] md:h-[20vw] overflow-hidden">
+                <Image
+                    src="/Media/im3.jpg"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    width={10000}
+                    height={10000}
+                    alt="hero cover"
+                />
+                <div className="absolute inset-0 bg-dark-primary mix-blend-multiply"></div>
+                <div className="absolute z-10 flex flex-col items-center justify-center p-5 md:p-14 h-full w-full gap-3">
                     <h1 className="section-title text-white">Our Products</h1>
                     <p className="header-subtitle text-white/90">Comprehensive range of medical supplies trusted by healthcare professionals worldwide</p>
                 </div>

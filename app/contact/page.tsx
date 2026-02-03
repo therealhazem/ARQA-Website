@@ -53,6 +53,8 @@ const page = () => {
                 </div>
             </div>
 
+
+
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between section-padding pt-0 gap-6 md:gap-8">
                 {/* Contacts */}
                 <div className="flex flex-col h-full w-full md:max-w-[40%] gap-3 md:gap-6">
