@@ -1,72 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import ProductCard from "@/components/ProductCard"
 import { Button } from "@/components/ui/button"
 import { ButtonGroup } from "@/components/ui/button-group"
 import { Input } from "@/components/ui/input"
+import { getProducts } from "@/sanity/lib/getProducts"
 import { SearchIcon } from "lucide-react"
 import Image from "next/image"
-import { useState } from "react"
-
-
-const products = [
-    {
-        name: "Black Nitrile Examination Gloves", src: "/Products/Black.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-    {
-        name: "Surgical Face Masks", src: "/Products/mask.png", type: "Masks",
-        prop: ["99% bacterial filtration", "Comfortable elastic ear loops", "Adjustable nose bridge"]
-    },
-    {
-        name: "Digital Thermometer", src: "/Products/thermo.png", type: "Thermometers",
-        prop: ["Non-contact measurement", "Fast 1-second reading", "Memory recall function"]
-    },
-    {
-        name: "Blue Nitrile Examination Gloves", src: "/Products/blue.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-    {
-        name: "Latex Examination Gloves", src: "/Products/latex.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-    {
-        name: "Syntex Examination Gloves", src: "/Products/Syntex.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-    {
-        name: "Vinyl Examination Gloves", src: "/Products/Vinyl.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-    {
-        name: "Black Nitrile Examination Gloves", src: "/Products/Black.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-    {
-        name: "Surgical Face Masks", src: "/Products/mask.png", type: "Masks",
-        prop: ["99% bacterial filtration", "Comfortable elastic ear loops", "Adjustable nose bridge"]
-    },
-    {
-        name: "Digital Thermometer", src: "/Products/thermo.png", type: "Thermometers",
-        prop: ["Non-contact measurement", "Fast 1-second reading", "Memory recall function"]
-    },
-    {
-        name: "Blue Nitrile Examination Gloves", src: "/Products/blue.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-    {
-        name: "Latex Examination Gloves", src: "/Products/latex.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-    {
-        name: "Syntex Examination Gloves", src: "/Products/Syntex.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-    {
-        name: "Vinyl Examination Gloves", src: "/Products/Vinyl.png", type: "Gloves",
-        prop: ["Superior puncture resistance", "Latex-free protection", "Textured grip for precision"]
-    },
-
-]
+import { useEffect, useState } from "react"
 
 
 const categories = [
@@ -77,10 +18,17 @@ const categories = [
     "Depressors",
 ];
 
-const page = () => {
+const Page = () => {
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+
+    const [Products, setProducts] = useState<any[]>([])
+
+    useEffect(() => {
+        getProducts().then(setProducts)
+    }, [])
+
     const [active, setActive] = useState("Gloves");
+
     return (
         <>
 
@@ -136,9 +84,14 @@ const page = () => {
                     {/* Products Grid */}
                     <div className="w-full">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 items-stretch">
-                            {products.map((_, index) => (
-                                <ProductCard key={index} srcc={_.src} namee={_.name} propp={_.prop} typee={_.type} />
-                            ))}
+                            {Products.map((product) => (
+                                <ProductCard
+                                    key={product._id}
+                                    id={product._id}
+                                    srcc={product.images?.[0].url || ''}
+                                    namee={product.name}
+                                    propp={product.features}
+                                    typee={product.category} />))}
                         </div>
                     </div>
                 </div>
@@ -147,4 +100,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

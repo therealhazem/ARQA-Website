@@ -1,23 +1,12 @@
-const cards = [
-    {
-        title: "ISO",
-        desc: "13485 Certified",
-    },
-    {
-        title: "FDA",
-        desc: "Approved Products",
-    },
-    {
-        title: "CE",
-        desc: "Mark Certified",
-    },
-    {
-        title: "GMP",
-        desc: "Compliant",
-    }
-]
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { AvatarBadge } from "./ui/avatar";
+import { getCertificates } from "@/sanity/lib/getCertificates";
 
-const Certifications = () => {
+
+const Certifications = async () => {
+    const cards = await getCertificates();
+
     return (
         <div className="w-full bg-white section-padding">
             <div className="container mx-auto flex flex-col items-center text-center">
@@ -35,18 +24,28 @@ const Certifications = () => {
                 <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 
                 items-stretch auto-rows-fr w-full gap-4 mt-10">
 
-                    {cards.map((item) => (
+                    {(cards ?? []).map((item: any) => (
                         <div
-                            key={item.title}
+                            key={item._id}
                             className="h-full flex flex-col items-center justify-center 
                             border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 
                             transition-all duration-200 bg-white gap-2 p-6 md:p-8"
                         >
+                            <Avatar>
+                                <AvatarImage
+                                    className="rounded-full w-24 h-24"
+                                    src={item.img || "/"}
+                                    alt={item.name || "Avatar"}
+                                />
+                                <AvatarFallback>{item.name}</AvatarFallback>
+                                <AvatarBadge />
+                            </Avatar>
+
                             <h3 className="font-poppins font-semibold text-dark-primary text-xl md:text-2xl">
-                                {item.title}
+                                {item.name}
                             </h3>
                             <p className="card-body text-gray-700">
-                                {item.desc}
+                                {item.description}
                             </p>
                         </div>
                     ))}

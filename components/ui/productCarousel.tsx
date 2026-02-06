@@ -13,15 +13,16 @@ import {
 } from "@/components/ui/carousel"
 import clsx from "clsx"
 
-const images = [
-    "/products/Black.png",
-    "/products/blue.png",
-    "/products/latex.png",
-    "/products/mask.png",
-    "/products/vinyl.png",
-]
+type ProductImage = {
+    _key: string
+    url: string
+}
 
-export function ProductCarousel() {
+type ProductCarouselProps = {
+    images: ProductImage[]
+}
+
+export function ProductCarousel({ images }: ProductCarouselProps) {
     const [api, setApi] = React.useState<CarouselApi>()
     const [current, setCurrent] = React.useState(0)
 
@@ -35,21 +36,23 @@ export function ProductCarousel() {
         })
     }, [api])
 
+    if (!images || images.length === 0) return null
+
     return (
         <div className="mx-auto lg:mx-0 w-full max-w-xl overflow-hidden xl:overflow-visible">
             {/* Main image */}
             <Carousel setApi={setApi}>
                 <CarouselContent>
-                    {images.map((src, index) => (
-                        <CarouselItem key={index}>
+                    {images.map((image, _key) => (
+                        <CarouselItem key={_key}>
                             <Card className="border-0 shadow-none">
                                 <Image
-                                    src={src}
+                                    src={image.url}
                                     width={600}
                                     height={600}
-                                    alt={`Product image ${index + 1}`}
+                                    alt={`Product image ${_key + 1}`}
                                     className="rounded-xl w-full"
-                                    priority={index === current}
+                                    priority={_key === 0}
                                 />
                             </Card>
                         </CarouselItem>
@@ -63,22 +66,22 @@ export function ProductCarousel() {
 
             {/* Thumbnails */}
             <div className=" flex gap-4 justify-center overflow-x-auto">
-                {images.map((src, index) => (
+                {images.map((image, _key) => (
                     <button
-                        key={index}
-                        onClick={() => api?.scrollTo(index)}
+                        key={_key}
+                        onClick={() => api?.scrollTo(_key)}
                         className={clsx(
                             "transition rounded-xl border-2",
-                            current === index
+                            current === _key
                                 ? "border-primary"
                                 : "border-transparent opacity-70"
                         )}
                     >
                         <Image
-                            src={src}
+                            src={image.url}
                             width={80}
                             height={80}
-                            alt={`Thumbnail ${index + 1}`}
+                            alt={`Thumbnail ${_key + 1}`}
                             className="rounded-xl"
                         />
                     </button>

@@ -2,15 +2,16 @@ import { Card, CardContent } from "./ui/card"
 import { CalendarDays, Dot } from "lucide-react"
 import * as Icons from "lucide-react";
 
-type mytypess = {
-    namee: string;
-    propp: string[];
-    desc: string;
-    typee: string;
-    icon?: string;
-};
+export type ProductsGuideProps = {
+    name: string
+    prop?: string[]
+    type: string
+    desc: string
+    icon?: string
+    date: string
+}
 
-const ProductsGuide = ({ namee, propp, typee, desc, icon }: mytypess) => {
+const ProductsGuide = ({ name, prop, type, desc, icon, date }: ProductsGuideProps) => {
     const IconComponent = icon ? (Icons[icon as keyof typeof Icons] as React.ElementType) : null;
 
     return (
@@ -34,18 +35,18 @@ const ProductsGuide = ({ namee, propp, typee, desc, icon }: mytypess) => {
                                 <h3 className="card-title leading-snug text-start line-clamp-2
                                            group-hover:text-myprimary
                                            transition-colors duration-300">
-                                    {namee}
+                                    {name}
                                 </h3>
                             </div>
 
                             {/* Type + Date */}
                             <div className="flex flex-row gap-2 text-sm items-center">
                                 <span className="font-medium bg-dark-primary text-white rounded-md px-3 py-1">
-                                    {typee}
+                                    {type}
                                 </span>
                                 <span className="flex items-center gap-1 card-body">
                                     <CalendarDays className="w-5" />
-                                    <span>March 15, 2024</span>
+                                    <span>{date}</span>
                                 </span>
                             </div>
 
@@ -54,17 +55,16 @@ const ProductsGuide = ({ namee, propp, typee, desc, icon }: mytypess) => {
                                 <span className="card-body text-gray-600 leading-snug">{desc}</span>
                                 <span className="leading-snug card-title text-sm">Topics covered:</span>
                                 <ul className="flex flex-col gap-1">
-                                    {propp.slice(0,).map((item, i) => (
+                                    {(prop ?? []).slice(0,).map((item, i) => (
                                         <li key={i} className="flex items-center gap-2 card-body text-gray-600">
                                             <Dot className="w-6 h-6 text-teal-700 shrink-0" />
                                             <span className="leading-snug">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
+
                             </div>
                         </div>
-
-                        {/* If you add a button later, wrap it in mt-auto to push to bottom */}
                     </div>
                 </CardContent>
             </Card>

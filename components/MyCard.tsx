@@ -1,21 +1,20 @@
-import {
-    CarouselItem,
-} from "@/components/ui/carousel"
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { CarouselItem } from "@/components/ui/carousel"
 import { Card, CardContent } from "./ui/card"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import { Check } from "lucide-react"
 import Link from "next/link"
 
-type mytypess = {
-    srcc: string;
-    namee: string;
-    propp: string[];
-    key: number;
-    typee: string;
-};
+type MyCardProps = {
+    id: any
+    srcc?: string
+    namee: string
+    propp?: string[] | null
+    typee: string
+}
 
-const MyCard = ({ srcc, namee, propp, typee }: mytypess) => {
+const MyCard = ({ id, srcc, namee, propp, typee }: MyCardProps) => {
     return (
         <CarouselItem className="md:basis-1/2 xl:basis-1/3 py-6">
             <Card className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl">
@@ -27,10 +26,9 @@ const MyCard = ({ srcc, namee, propp, typee }: mytypess) => {
                             <span className="absolute z-10 top-4 left-4 text-[0.7rem] sm:text-xs font-medium bg-dark-primary text-white rounded-full px-3 py-1">
                                 {typee}
                             </span>
-
                             <Image
-                                src={srcc}
-                                alt={namee}
+                                src={srcc || "/"}
+                                alt={namee || "img"}
                                 fill
                                 priority
                                 className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -47,10 +45,10 @@ const MyCard = ({ srcc, namee, propp, typee }: mytypess) => {
 
                             {/* Features */}
                             <ul className="flex flex-col gap-2">
-                                {propp.slice(0, 3).map((item, i) => (
+                                {(propp ?? []).slice(0, 3).map((item, i) => (
                                     <li
                                         key={i}
-                                        className="flex items-start gap-2 card-body text-gray-600"
+                                        className="flex items-start gap-2 card-body text-start text-gray-600"
                                     >
                                         <Check className="w-4 h-4 mt-0.5 text-teal-700 shrink-0" />
                                         <span className="leading-snug">{item}</span>
@@ -59,10 +57,10 @@ const MyCard = ({ srcc, namee, propp, typee }: mytypess) => {
                             </ul>
 
                             {/* Button */}
-                            <Link href={"products/" + namee}>
+                            <Link href={`/products/${id}`}>
                                 <Button
                                     className="mt-2 w-full text-white bg-dark-primary hover:bg-myprimary
-                                text-sm md:text-base py-5 rounded-xl transition-all"
+                  text-sm md:text-base py-5 rounded-xl transition-all"
                                 >
                                     View Details
                                 </Button>
@@ -73,8 +71,7 @@ const MyCard = ({ srcc, namee, propp, typee }: mytypess) => {
                 </CardContent>
             </Card>
         </CarouselItem>
-    );
-};
-
+    )
+}
 
 export default MyCard

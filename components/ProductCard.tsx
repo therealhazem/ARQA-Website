@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card, CardContent } from "./ui/card"
 import Image from "next/image"
 import { Button } from "./ui/button"
@@ -5,14 +6,15 @@ import { Check } from "lucide-react"
 import Link from "next/link";
 
 type mytypess = {
+    id: any
     srcc: string;
     namee: string;
-    propp: string[];
+    propp?: string[];
     key: number;
     typee: string;
 };
 
-const ProductCard = ({ srcc, namee, propp, typee }: mytypess) => {
+const ProductCard = ({ id, srcc, namee, propp, typee }: mytypess) => {
     return (
         <div className="md:basis-1/2 xl:basis-1/3 py-2">
             <Card className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl">
@@ -44,7 +46,7 @@ const ProductCard = ({ srcc, namee, propp, typee }: mytypess) => {
 
                             {/* Features */}
                             <ul className="flex flex-col gap-2">
-                                {propp.slice(0, 3).map((item, i) => (
+                                {(propp ?? []).slice(0, 3).map((item, i) => (
                                     <li
                                         key={i}
                                         className="flex items-start gap-2 card-body text-gray-600"
@@ -56,7 +58,7 @@ const ProductCard = ({ srcc, namee, propp, typee }: mytypess) => {
                             </ul>
 
                             {/* Button */}
-                            <Link href={"/products/" + namee}>
+                            <Link href={`/products/${id}`}>
                                 <Button
                                     className="mt-2 w-full text-white bg-dark-primary hover:bg-myprimary
                                 text-sm md:text-base py-5 rounded-xl transition-all"
