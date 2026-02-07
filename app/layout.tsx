@@ -4,8 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Separator from "@/components/Separator";
 import Footer from "@/components/Footer";
-import Image from "next/image";
-import Link from "next/link";
 import Whatsapp from "@/components/Whatsapp";
 
 const geistSans = Geist({
