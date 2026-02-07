@@ -1,4 +1,5 @@
 import { Hand, ShieldPlusIcon, Award, TrendingUp } from "lucide-react"
+import FadeInSection from "./FadeInSection"
 
 const cards = [
     {
@@ -24,8 +25,7 @@ const cards = [
 ]
 const Categories = () => {
     return (
-        <div className="w-full bg-gray-50 section-padding">
-
+        <FadeInSection className="w-full bg-gray-50 section-padding">
             <div className="container mx-auto flex flex-col items-center text-center">
                 <h1 className="section-title">
                     What We Provide
@@ -47,7 +47,7 @@ const Categories = () => {
                 </div>
 
             </div>
-        </div>
+        </FadeInSection>
     )
 }
 

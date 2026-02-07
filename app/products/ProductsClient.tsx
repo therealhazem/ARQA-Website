@@ -21,15 +21,48 @@ const categories: Record<string, string[]> = {
     Depressors: [],
 }
 
+/** Product types that are mutually exclusive (e.g. glove types). When user searches for one, exclude products that match others. */
+const MUTUALLY_EXCLUSIVE_TYPES = ["latex", "nitrile", "vinyl"]
+
+function textContains(haystack: string, needle: string) {
+    return haystack.toLowerCase().includes(needle.toLowerCase())
+}
+
+function productMatchesSearch(product: { name?: string; category?: string; features?: string[] }, searchNorm: string): boolean {
+    const name = (product.name ?? "").toLowerCase()
+    const cat = (product.category ?? "").toLowerCase()
+    const features = (product.features ?? []).map((f: string) => f.toLowerCase())
+
+    if (!searchNorm) return true
+
+    const matchesSearch =
+        name.includes(searchNorm) ||
+        cat.includes(searchNorm) ||
+        features.some((f) => f.includes(searchNorm))
+
+    if (!matchesSearch) return false
+
+    // When search is a mutually exclusive type (e.g. "latex"), exclude products that clearly are another type
+    if (MUTUALLY_EXCLUSIVE_TYPES.includes(searchNorm)) {
+        const others = MUTUALLY_EXCLUSIVE_TYPES.filter((t) => t !== searchNorm)
+        const nameAndFeatures = [name, ...features].join(" ")
+        const hasOtherType = others.some((t) => nameAndFeatures.includes(t))
+        if (hasOtherType) return false
+    }
+
+    return true
+}
+
 export default function ProductsClient() {
     const router = useRouter()
     const searchParams = useSearchParams()
 
     const [products, setProducts] = useState<any[]>([])
 
-    const search = searchParams.get("search") || ""
+    const search = (searchParams.get("search") ?? "").trim()
+    const searchNorm = search.toLowerCase()
     const category = searchParams.get("category") || "All"
-    const sub = searchParams.get("sub") || ""
+    const sub = (searchParams.get("sub") ?? "").trim()
     const page = Number(searchParams.get("page") || 1)
 
     const [searchInput, setSearchInput] = useState(search)
@@ -38,28 +71,31 @@ export default function ProductsClient() {
         getProducts().then(setProducts)
     }, [])
 
-    /* Filtering */
+    // Keep search input in sync with URL (e.g. back/forward, shared links)
+    useEffect(() => {
+        setSearchInput(searchParams.get("search") ?? "")
+    }, [searchParams])
+
+    /* Filtering: category (left sidebar) = by category only. Search bar = by name, category, or features, with type-exclusion for latex/nitrile/vinyl. */
     const filteredProducts = useMemo(() => {
         return products.filter((product) => {
+            // 1) Category filter (left sidebar): filter by category only
             const matchesCategory =
-                category === "All" || product.category === category
+                category === "All" || (product.category ?? "").trim() === category
 
+            // 2) Sub filter (clicking a subcategory e.g. "Latex" under Gloves): filter by that type in name or features
             const matchesSub =
                 !sub ||
-                product.name.toLowerCase().includes(sub.toLowerCase()) ||
-                product.features?.some((f: string) =>
-                    f.toLowerCase().includes(sub.toLowerCase())
-                )
+                textContains(product.name ?? "", sub) ||
+                (product.features ?? []).some((f: string) => textContains(f, sub))
 
-            const matchesSearch =
-                product.name.toLowerCase().includes(search.toLowerCase()) ||
-                product.features?.some((f: string) =>
-                    f.toLowerCase().includes(search.toLowerCase())
-                )
+            // 3) Search bar: name, category, or features; when search is latex/nitrile/vinyl, exclude other types
+            const matchesSearch = productMatchesSearch(product, searchNorm)
 
             return matchesCategory && matchesSub && matchesSearch
         })
-    }, [products, search, category, sub])
+    }, [products, searchNorm, category, sub])
+
 
     /* Pagination */
     const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE)

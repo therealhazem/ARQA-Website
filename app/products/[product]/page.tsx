@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import NotFound from "@/components/NotFound"
 import { Button } from "@/components/ui/button"
 import { ProductCarousel } from "@/components/ui/productCarousel"
 import { getSpecificProduct } from "@/sanity/lib/getProducts"
@@ -37,7 +38,7 @@ export default async function Page({ params }: PageProps) {
     }
     `)
 
-    if (!theProduct) return <>this page is not found</>
+    if (!theProduct) return <NotFound />
 
     return (
         <>

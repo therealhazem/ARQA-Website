@@ -1,5 +1,9 @@
+"use client"
+
 import Link from "next/link"
+import { motion } from "framer-motion"
 import { Button } from "./ui/button"
+import { fadeInUp } from "@/lib/motion"
 
 const Hero = () => {
     return (
@@ -17,7 +21,12 @@ const Hero = () => {
             />
             <div className="absolute inset-0 bg-myprimary mix-blend-multiply"></div>
 
-            <div className="absolute z-10 flex flex-col items-start justify-center p-5 md:p-14 h-full w-full md:w-[60%] gap-3">
+            <motion.div
+                className="absolute z-10 flex flex-col items-start justify-center p-5 md:p-14 h-full w-full md:w-[60%] gap-3"
+                initial={fadeInUp.initial}
+                animate={fadeInUp.animate}
+                transition={fadeInUp.transition}
+            >
                 <h1 className="
                 text-white tracking-tight font-semibold font-poppins text-balance
                 text-[6.3vw]/[7vw] text-start
@@ -46,7 +55,7 @@ const Hero = () => {
                         </Button>
                     </Link>
                 </div>
-            </div>
+            </motion.div>
         </div>
 
     )

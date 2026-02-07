@@ -1,4 +1,5 @@
 import Featured from "@/components/Featured"
+import NotFound from "@/components/NotFound"
 import { getSpecificKnowledge } from "@/sanity/lib/getKnowledge"
 import { CalendarDays } from "lucide-react"
 import { PortableText } from "next-sanity"
@@ -20,7 +21,7 @@ export default async function Page({ params }: PageProps) {
     }
     `)
 
-    if (!theKnowledge) return <>this page is not found</>
+    if (!theKnowledge) return <NotFound />
 
     return (
         <>

@@ -1,0 +1,17 @@
+{
+  "name": "ARQA Medical",
+  "short_name": "ARQA Medical",
+  "description": "Premium medical supplies for healthcare professionals",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4d4f",
+  "icons": [
+    {
+      "src": "/ARQA Logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

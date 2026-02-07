@@ -8,6 +8,7 @@ import {
 import { Button } from "./ui/button"
 import MyCard from "./MyCard"
 import Link from "next/link"
+import FadeInSection from "./FadeInSection"
 import { getFeaturedProducts } from "@/sanity/lib/getProducts"
 
 const Featured = async () => {
@@ -26,7 +27,7 @@ const Featured = async () => {
     const products: Product[] = await getFeaturedProducts()
 
     return (
-        <div className="container mx-auto flex flex-col items-center text-center section-padding text-pretty">
+        <FadeInSection className="container mx-auto flex flex-col items-center text-center section-padding text-pretty">
             <h1 className="section-title">Featured Medical Supplies</h1>
             <h2 className="section-subtitle max-w-2xl">
                 Discover our most trusted medical supplies, carefully selected to meet
@@ -60,7 +61,7 @@ const Featured = async () => {
                     View All Products
                 </Button>
             </Link>
-        </div>
+        </FadeInSection>
     )
 }
 

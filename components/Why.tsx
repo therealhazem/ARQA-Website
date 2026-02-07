@@ -1,6 +1,6 @@
-import { Shield, Award, BadgeCheck, } from "lucide-react"
-
+import { Shield, Award, BadgeCheck } from "lucide-react"
 import Image from "next/image"
+import FadeInSection from "./FadeInSection"
 
 
 const cards = [
@@ -24,8 +24,7 @@ const cards = [
 
 const Why = () => {
     return (
-        <div className="w-full text-white flex items-center justify-center section-padding bg-linear-to-b from-dark-primary to-myprimary text-pretty">
-
+        <FadeInSection className="w-full text-white flex items-center justify-center section-padding bg-linear-to-b from-dark-primary to-myprimary text-pretty">
             <div className="container mx-auto flex flex-col items-center justify-center">
                 <div className="flex flex-col items-center justify-center xl:flex-row gap-8 lg:gap-14">
                     <Image src="/Doctors.png" className="rounded-xl hover:shadow-lg/20 shadow-white transition-all duration-200 hover:translate-y-[-2px]" width={530} height={530} alt="Doctors" priority />
@@ -52,7 +51,7 @@ const Why = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </FadeInSection>
     )
 }
 
