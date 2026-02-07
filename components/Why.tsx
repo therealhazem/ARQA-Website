@@ -6,18 +6,18 @@ import Image from "next/image"
 const cards = [
     {
         icon: BadgeCheck,
-        title: "Quality Assured",
-        desc: "All products meet international healthcare standards and undergo rigorous quality control processes",
+        title: "Quality You Can Trust",
+        desc: "All products are carefully selected to meet international quality standards and undergo strict evaluation before entering the Egyptian market.",
     },
     {
         icon: Shield,
         title: "Reliable Supply Chain",
-        desc: "Consistent product availability backed by efficient logistics and delivery systems nationwide",
+        desc: "Decades of expertise in importing, customs clearance, and logistics ensure consistent availability and dependable delivery.",
     },
     {
         icon: Award,
-        title: "Expert Support",
-        desc: "Dedicated team of specialists ready to assist with product selection and technical guidance",
+        title: "Market Expertise",
+        desc: "A professional team with deep knowledge of Egypt’s medical supply landscape, ready to support informed purchasing decisions.",
     },
 ]
 

@@ -13,8 +13,8 @@ const ProdGuide = async () => {
             {/* Header of Products Guide */}
             <div className="w-full bg-gray-50 section-padding flex items-center justify-center">
                 <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
-                    <h1 className="section-title">Products & Knowledge Guides</h1>
-                    <p className="section-subtitle">Expert insights and detailed information about our medical supply categories</p>
+                    <h1 className="section-title">Products & Knowledge Hub</h1>
+                    <p className="section-subtitle">Clear, practical information to help professionals choose the right materials, understand standards, and use products effectively.</p>
                 </div>
             </div>
 

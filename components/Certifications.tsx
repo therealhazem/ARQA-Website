@@ -16,9 +16,7 @@ const Certifications = async () => {
                 </h1>
 
                 <p className="section-subtitle max-w-3xl">
-                    All ARQA products meet or exceed international quality standards.
-                    We work exclusively with ISO-certified manufacturers and ensure every product complies
-                    with relevant healthcare regulations including FDA, CE Mark, and local Egyptian healthcare standards.
+                    ARQA sources products from manufacturers adhering to international quality standards, including ISO, CE, and FDA, ensuring safety, reliability, and compliance with local Egyptian regulations. We prioritize transparency by working with certified suppliers and showcasing their quality certifications.
                 </p>
 
                 <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "./ui/button"
 
 const Hero = () => {
@@ -28,18 +29,22 @@ const Hero = () => {
                 text-white/90 font-poppins text-pretty
                 text-base/snug text-start
                 xl:text-[1.2vw]/relaxed md:text-base/snug md:text-start">
-                    Delivering premium medical products to healthcare professionals across Egypt and beyond. Quality you can trust, service you can rely on.
-                    Sourcing the highest quality medical consumables from trusted global partners in China, Malaysia, and Thailand.
+                    Delivering certified medical products that meet international standards, backed by decades of experience in importing, logistics, and supply chain management.
+                    At ARQA, we collaborate with leading global manufacturers to bring reliable, high quality medical supplies to healthcare professionals across Egypt.
                 </h2>
                 <div className="flex flex-row gap-4">
-                    <Button className="bg-creamy/90 text-dark-primary lg:p-5 lg:text-lg transition-all duration-300
+                    <Link href={"/products"}>
+                        <Button className="bg-creamy/90 text-dark-primary lg:p-5 lg:text-lg transition-all duration-300
                     md:border-3 border-2 border-creamy hover:bg-creamy hover:cursor-pointer font-poppins">
-                        Explore Products
-                    </Button>
-                    <Button className="bg-dark-primary text-creamy lg:p-5 lg:text-lg transition-all duration-300
+                            Explore Products
+                        </Button>
+                    </Link>
+                    <Link href={"/knowledge"}>
+                        <Button className="bg-dark-primary text-creamy lg:p-5 lg:text-lg transition-all duration-300
                     md:border-3 border-2 border-creamy/80 hover:bg-dark-primary/50 hover:cursor-pointer font-poppins">
-                        Knowledge Hub
-                    </Button>
+                            Knowledge Hub
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </div>

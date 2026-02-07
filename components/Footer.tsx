@@ -27,9 +27,9 @@ const Footer = () => {
                 </div>
                 <div className="text-white flex flex-col gap-3 items-center md:items-start">
                     <h3 className="card-title text-white text-lg">Contact Us</h3>
-                    <Link className="flex flex-row gap-2" href="/"> <Mail className="w-5" /> info@arqamedical.com</Link>
-                    <Link className="flex flex-row gap-2" href="/"> <Phone className="w-5" /> +20 123 456 7890</Link>
-                    <Link className="flex flex-row gap-2" href="/"> <MapPin className="w-5" /> Cairo, Egypt</Link>
+                    <Link className="flex flex-row gap-2" href="/"> <Mail className="w-5" /> contact@arqamedical.com</Link>
+                    <Link className="flex flex-row gap-2" href="/"> <Phone className="w-5" /> +20 1000 047 939</Link>
+                    <Link className="flex flex-row gap-2" href="/"> <MapPin className="w-5" /> Sharqia - 10th of Ramadan City, Cairo, Egypt</Link>
                 </div>
             </div>
             <div className="container mx-auto flex flex-col pt-8 text-center gap-4 text-creamy px-4 sm:px-5">

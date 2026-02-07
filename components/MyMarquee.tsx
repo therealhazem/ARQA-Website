@@ -27,10 +27,10 @@ const MyMarquee = () => {
 
     return (
         <div className="container mx-auto flex flex-col items-center text-center section-padding">
-            <h1 className="section-title">Trusted By</h1>
+            <h1 className="section-title">Trusted by Leading Organizations</h1>
 
             <p className="section-subtitle">
-                Other Great Businesses That Trusted Our Products
+                ARQA products are used by a wide range of businesses and institutions that value consistency, safety, and dependable supply.
             </p>
 
             <div className="container mx-auto mt-10">

@@ -4,17 +4,17 @@ const cards = [
     {
         icon: Target,
         title: "Our Mission",
-        desc: "To provide Egyptian healthcare professionals with premium medical supplies that meet the highest international quality standards.",
+        desc: "To provide Egyptian healthcare professionals with certified, high-quality medical supplies that support safety, performance, and trust.",
     },
     {
         icon: Eye,
         title: "Our Vision",
-        desc: "To become Egypt's most trusted partner for medical supplies, known for quality, reliability, and exceptional service.",
+        desc: "To become one of Egypt’s most reliable medical supply partners, recognized for integrity, consistency, and long-term value.",
     },
     {
         icon: CircleStar,
         title: "Our Values",
-        desc: "Quality, integrity, reliability, and unwavering commitment to our healthcare partners and the patients they serve.",
+        desc: "Quality • Responsibility • Transparency • Long Term Partnerships and unwavering commitment to our healthcare partners and the patients they serve.",
     }
 ]
 

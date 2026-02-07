@@ -10,8 +10,7 @@ const Expert = () => {
                 </h1>
 
                 <p className="section-subtitle pb-2">
-                    Our team of medical supply experts is ready to help you find the perfect products for your facility
-                </p>
+                    Our team is ready to assist you with product information, availability, and sourcing solutions tailored to your needs.                </p>
 
                 <div className="mt-4">
                     <Button

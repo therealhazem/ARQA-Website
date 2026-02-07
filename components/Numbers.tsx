@@ -2,15 +2,15 @@
 const cards = [
     {
         title: "30+",
-        desc: "Years of Excellence",
+        desc: "Combined industry experience",
     },
     {
-        title: "1000+",
+        title: "50+",
+        desc: "Medical & Industrial Products",
+    },
+    {
+        title: "20+",
         desc: "Healthcare Partners",
-    },
-    {
-        title: "100+",
-        desc: "Product Lines",
     },
     {
         title: "24/7",

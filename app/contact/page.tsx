@@ -17,28 +17,26 @@ const cards = [
     {
         icon: Phone,
         title: "Phone",
-        desc: `+20 123 456 7890
-        +20 098 765 4321`,
+        desc: `+20 1000 047 939
+        +20 10 28811821`,
     },
     {
         icon: Mail,
         title: "Email",
-        desc: `info@arqamedical.com
-                sales@arqamedical.com`,
+        desc: `mohamed.maghraby@arqamedical.com
+                contact@arqamedical.com`,
     },
     {
         icon: MapPin,
         title: "Address",
-        desc: `123 Medical District
-        Cairo, Egypt
-        Postal Code: 12345`,
+        desc: `Sharqia - 10th of Ramadan City
+        Cairo, Egypt`
     },
     {
         icon: Clock,
         title: "Business Hours",
-        desc: `Monday - Friday: 9:00 AM - 6:00 PM
-        Saturday: 10:00 AM - 3:00 PM
-        Sunday: Closed`,
+        desc: `Saturday - Tuesday: 9:00 AM - 5:00 PM
+        Friday: Closed`,
     },
 ];
 
@@ -49,7 +47,7 @@ const page = () => {
             <div className="w-full text-white bg-linear-to-t from-dark-primary to-myprimary section-padding flex items-center justify-center">
                 <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
                     <h1 className="section-title text-white">Contact Us</h1>
-                    <p className="header-subtitle text-white/90">Get in touch with our team for inquiries, quotes, or support</p>
+                    <p className="header-subtitle text-white/90">For inquiries, quotations, or partnership opportunities, our team is ready to assist.</p>
                 </div>
             </div>
 
