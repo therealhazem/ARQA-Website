@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -10,7 +12,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-
+import Swal from "sweetalert2"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
 const cards = [
@@ -39,6 +41,58 @@ const cards = [
         Friday: Closed`,
     },
 ];
+
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const form = e.currentTarget
+
+    const data = {
+        name: (form.elements.namedItem("name") as HTMLInputElement).value,
+        company: (form.elements.namedItem("company") as HTMLInputElement).value,
+        email: (form.elements.namedItem("email") as HTMLInputElement).value,
+        phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+        message: (form.elements.namedItem("feedback") as HTMLTextAreaElement).value,
+    }
+
+    Swal.fire({
+        title: "Sending message...",
+        text: "Please wait",
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading()
+        },
+    })
+
+    try {
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        })
+
+        if (!res.ok) throw new Error("Failed")
+
+        Swal.fire({
+            icon: "success",
+            title: "Message sent",
+            text: "Our team will contact you shortly.",
+            confirmButtonColor: "#0f766e",
+        })
+
+        form.reset()
+    } catch {
+        Swal.fire({
+            icon: "error",
+            title: "Something went wrong",
+            text: "Please try again later.",
+            confirmButtonColor: "#991b1b",
+        })
+    }
+}
+
+
 
 const page = () => {
     return (
@@ -73,7 +127,7 @@ const page = () => {
 
                 </div>
                 {/* Form */}
-                <form className="border-2 rounded-2xl p-6 md:p-8 bg-white shadow-sm w-full">
+                <form onSubmit={handleSubmit} className="border-2 rounded-2xl p-6 md:p-8 bg-white shadow-sm w-full">
                     <FieldSet>
                         <FieldLegend className="card-title text-gray-800 text-lg md:text-xl">
                             <span className="card-title"> Send us a Message </span>
@@ -91,7 +145,7 @@ const page = () => {
                                     Full name<span className="text-red-600 font-bold">*</span>
                                 </FieldLabel>
                                 <Input
-                                    id="name"
+                                    id="name" name="name"
                                     required
                                     autoComplete="off"
                                     placeholder="Your name"
@@ -105,7 +159,7 @@ const page = () => {
                                     Company / Facility
                                 </FieldLabel>
                                 <Input
-                                    id="company"
+                                    id="company" name="company"
                                     autoComplete="off"
                                     placeholder="Your organization"
                                     className="md:text-lg border-2 px-4 py-5"
@@ -118,7 +172,7 @@ const page = () => {
                                     Email Address <span className="text-red-600 font-bold">*</span>
                                 </FieldLabel>
                                 <Input
-                                    id="email"
+                                    id="email" name="email"
                                     required
                                     autoComplete="off"
                                     placeholder="your@email.com"
@@ -132,7 +186,7 @@ const page = () => {
                                     Phone Number / Whatsapp Number
                                 </FieldLabel>
                                 <Input
-                                    id="phone"
+                                    id="phone" name="phone"
                                     autoComplete="off"
                                     placeholder="+20 123 456 789"
                                     className="md:text-lg border-2 px-4 py-5"
@@ -145,9 +199,8 @@ const page = () => {
                                     Message<span className="text-red-600 font-bold">*</span>
                                 </FieldLabel>
                                 <Textarea
-                                    id="feedback"
+                                    id="feedback" name="feedback"
                                     required
-
                                     placeholder="Tell us about your requirements..."
                                     className="md:text-lg border-2 px-4 py-4 h-30"
                                 />
