@@ -1,25 +1,28 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
+import type { ReactNode } from "react"
 
-const defaultVariants = {
-  hidden: { opacity: 0, y: 20 },
+const defaultVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: {
+      duration: 0.45,
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+    },
   },
 }
 
 type Props = {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
 }
 
-/**
- * Wraps content and fades it in when it enters the viewport.
- * Used for section-level animations without changing layout or style.
- */
 export default function FadeInSection({ children, className }: Props) {
   return (
     <motion.div
