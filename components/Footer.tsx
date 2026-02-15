@@ -30,16 +30,16 @@ const Footer = () => {
                     >Face Masks</Link>
                     <Link
                         className="hover:underline active:underline underline-offset-4"
+                        href="/products?category=Depressors&page=1"
+                    >Tongue Depressors</Link>
+                    <Link
+                        className="hover:underline active:underline underline-offset-4"
                         href="/products?category=Thermometers&page=1"
                     >Thermometers</Link>
                     <Link
                         className="hover:underline active:underline underline-offset-4"
                         href="/products?category=Tapes&page=1"
                     >Casting Tapes</Link>
-                    <Link
-                        className="hover:underline active:underline underline-offset-4"
-                        href="/products?category=Depressors&page=1"
-                    >Tongue Depressors</Link>
 
                 </div>
                 <div className="text-white flex flex-col gap-3 items-center md:items-start">

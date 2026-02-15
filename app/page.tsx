@@ -7,7 +7,8 @@ import ProdGuide from "@/components/ProdGuide";
 import Testimonials from "@/components/Testimonials";
 import Why from "@/components/Why";
 
-
+/** Ensures Sanity content (Featured, ProdGuide, etc.) is fetched on every request so Vercel shows updates after refresh. */
+export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (

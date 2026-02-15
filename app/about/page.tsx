@@ -4,6 +4,9 @@ import Numbers from "@/components/Numbers"
 import Testimonials from "@/components/Testimonials"
 import Image from "next/image"
 
+/** Ensures Sanity content (Certifications, Testimonials) is fetched on every request so updates show after refresh. */
+export const dynamic = "force-dynamic";
+
 const page = () => {
     return (
         <>

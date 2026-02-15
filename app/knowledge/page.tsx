@@ -7,6 +7,9 @@ import { getKnowledge } from "@/sanity/lib/getKnowledge"
 import { getProductGuides } from "@/sanity/lib/getProductGuides"
 import Image from "next/image"
 
+/** Ensures Sanity content (Knowledge cards, Product guides) is fetched on every request so updates show after refresh. */
+export const dynamic = "force-dynamic";
+
 export type ProductGuide = {
     _id: string
     name: string

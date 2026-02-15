@@ -17,7 +17,7 @@ type MyCardProps = {
 const MyCard = ({ id, srcc, namee, propp, typee }: MyCardProps) => {
     return (
         <CarouselItem className="md:basis-1/2 xl:basis-1/3 py-6">
-            <Card className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl">
+            <Card className="rounded-2xl overflow-hidden transition-all size-full duration-300 hover:shadow-xl">
                 <CardContent className="p-0 mt-[-30px]">
                     <div className="flex flex-col h-full justify-between">
 
@@ -35,37 +35,32 @@ const MyCard = ({ id, srcc, namee, propp, typee }: MyCardProps) => {
                             />
                         </div>
 
-                        {/* Content */}
-                        <div className="flex flex-col justify-between mb-[-30px] gap-4 p-4 sm:p-5 lg:p-6">
-
-                            {/* Title */}
-                            <h3 className="card-title leading-snug text-start line-clamp-2">
-                                {namee}
-                            </h3>
-
-                            {/* Features */}
-                            <ul className="flex flex-col gap-2">
-                                {(propp ?? []).slice(0, 3).map((item, i) => (
-                                    <li
-                                        key={i}
-                                        className="flex items-start gap-2 card-body text-start text-gray-600"
-                                    >
-                                        <Check className="w-4 h-4 mt-0.5 text-teal-700 shrink-0" />
-                                        <span className="leading-snug">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            {/* Button */}
-                            <Link href={`/products/${id}`}>
+                        {/* Content: flex-1 + mt-auto on button keeps button at same height across all cards */}
+                        <div className="flex flex-col flex-1 min-h-0 gap-4 p-4 sm:p-5 lg:p-6 mb-[-30px]">
+                            <div className="flex-1 min-h-0 flex flex-col gap-2">
+                                <h3 className="card-title leading-snug text-start line-clamp-2">
+                                    {namee}
+                                </h3>
+                                <ul className="flex flex-col gap-2">
+                                    {(propp ?? []).slice(0, 3).map((item, i) => (
+                                        <li
+                                            key={i}
+                                            className="flex items-start gap-2 card-body text-start text-gray-600"
+                                        >
+                                            <Check className="w-4 h-4 mt-0.5 text-teal-700 shrink-0" />
+                                            <span className="leading-snug">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <Link href={`/products/${id}`} className="mt-auto block">
                                 <Button
-                                    className="mt-2 w-full text-white bg-dark-primary hover:bg-myprimary
+                                    className="w-full text-white bg-dark-primary hover:bg-myprimary
                   text-sm md:text-base py-5 rounded-xl transition-all"
                                 >
                                     View Details
                                 </Button>
                             </Link>
-
                         </div>
                     </div>
                 </CardContent>

@@ -16,41 +16,13 @@ const ITEMS_PER_PAGE = 12
 const categories: Record<string, string[]> = {
     Gloves: ["Nitrile", "Vinyl", "Latex"],
     Masks: ["Medical Mask", "N95"],
+    Depressors: [],
     Tapes: [],
     Thermometers: [],
-    Depressors: [],
 }
 
-/** Product types that are mutually exclusive (e.g. glove types). When user searches for one, exclude products that match others. */
-const MUTUALLY_EXCLUSIVE_TYPES = ["latex", "nitrile", "vinyl"]
-
-function textContains(haystack: string, needle: string) {
-    return haystack.toLowerCase().includes(needle.toLowerCase())
-}
-
-function productMatchesSearch(product: { name?: string; category?: string; features?: string[] }, searchNorm: string): boolean {
-    const name = (product.name ?? "").toLowerCase()
-    const cat = (product.category ?? "").toLowerCase()
-    const features = (product.features ?? []).map((f: string) => f.toLowerCase())
-
-    if (!searchNorm) return true
-
-    const matchesSearch =
-        name.includes(searchNorm) ||
-        cat.includes(searchNorm) ||
-        features.some((f) => f.includes(searchNorm))
-
-    if (!matchesSearch) return false
-
-    // When search is a mutually exclusive type (e.g. "latex"), exclude products that clearly are another type
-    if (MUTUALLY_EXCLUSIVE_TYPES.includes(searchNorm)) {
-        const others = MUTUALLY_EXCLUSIVE_TYPES.filter((t) => t !== searchNorm)
-        const nameAndFeatures = [name, ...features].join(" ")
-        const hasOtherType = others.some((t) => nameAndFeatures.includes(t))
-        if (hasOtherType) return false
-    }
-
-    return true
+function contains(a: string, b: string) {
+    return a.toLowerCase().includes(b.toLowerCase())
 }
 
 export default function ProductsClient() {
@@ -71,31 +43,38 @@ export default function ProductsClient() {
         getProducts().then(setProducts)
     }, [])
 
-    // Keep search input in sync with URL (e.g. back/forward, shared links)
+    // keep input synced with URL
     useEffect(() => {
-        setSearchInput(searchParams.get("search") ?? "")
-    }, [searchParams])
+        setSearchInput(search)
+    }, [search])
 
-    /* Filtering: category (left sidebar) = by category only. Search bar = by name, category, or features, with type-exclusion for latex/nitrile/vinyl. */
+    /* FILTERING LOGIC (CLEAN & EXACT REQUIREMENT) */
     const filteredProducts = useMemo(() => {
         return products.filter((product) => {
-            // 1) Category filter (left sidebar): filter by category only
-            const matchesCategory =
-                category === "All" || (product.category ?? "").trim() === category
+            const name = product.name ?? ""
+            const cat = product.category ?? ""
 
-            // 2) Sub filter (clicking a subcategory e.g. "Latex" under Gloves): filter by that type in name or features
+            // LEFT category buttons
+            const matchesCategory =
+                category === "All" ||
+                cat === category ||
+                contains(name, category)
+
+            // LEFT sub buttons (Vinyl, Latex, etc.)
             const matchesSub =
                 !sub ||
-                textContains(product.name ?? "", sub) ||
-                (product.features ?? []).some((f: string) => textContains(f, sub))
+                cat === sub ||
+                contains(name, sub)
 
-            // 3) Search bar: name, category, or features; when search is latex/nitrile/vinyl, exclude other types
-            const matchesSearch = productMatchesSearch(product, searchNorm)
+            // SEARCH BAR
+            const matchesSearch =
+                !searchNorm ||
+                contains(name, searchNorm) ||
+                contains(cat, searchNorm)
 
             return matchesCategory && matchesSub && matchesSearch
         })
-    }, [products, searchNorm, category, sub])
-
+    }, [products, category, sub, searchNorm])
 
     /* Pagination */
     const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE)
@@ -145,6 +124,11 @@ export default function ProductsClient() {
                         placeholder="Search a product..."
                         value={searchInput}
                         onChange={(e) => setSearchInput(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                                updateURL({ search: searchInput })
+                            }
+                        }}
                     />
                     <Button
                         className="py-6 bg-dark-primary hover:bg-myprimary"
@@ -161,8 +145,8 @@ export default function ProductsClient() {
                             <button
                                 onClick={() => updateURL({ category: "All", sub: "" })}
                                 className={`w-full font-bold text-left px-3 py-2 rounded ${category === "All"
-                                    ? "bg-myprimary text-white"
-                                    : "hover:bg-myprimary/15"
+                                        ? "bg-myprimary text-white"
+                                        : "hover:bg-myprimary/15"
                                     }`}
                             >
                                 All Products
@@ -173,8 +157,8 @@ export default function ProductsClient() {
                                     <button
                                         onClick={() => updateURL({ category: parent, sub: "" })}
                                         className={`w-full text-left px-3 py-2 font-semibold rounded ${category === parent
-                                            ? "bg-myprimary text-white"
-                                            : "hover:bg-myprimary/15"
+                                                ? "bg-myprimary text-white"
+                                                : "hover:bg-myprimary/15"
                                             }`}
                                     >
                                         {parent}
@@ -189,8 +173,8 @@ export default function ProductsClient() {
                                                         updateURL({ category: parent, sub: s })
                                                     }
                                                     className={`block w-full text-left text-sm px-3 py-1 rounded ${sub === s
-                                                        ? "bg-myprimary/30 text-primary font-medium"
-                                                        : "text-gray-700 hover:bg-myprimary/15"
+                                                            ? "bg-myprimary/30 text-primary font-medium"
+                                                            : "text-gray-700 hover:bg-myprimary/15"
                                                         }`}
                                                 >
                                                     • {s}

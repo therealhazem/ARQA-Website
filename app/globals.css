@@ -171,4 +171,19 @@
   .why-body {
     @apply text-white/90 text-base md:text-lg;
   }
+
+  /* Loading screen: logo fade in/out */
+  .loading-logo-pulse {
+    animation: loading-logo-pulse 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes loading-logo-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
 }

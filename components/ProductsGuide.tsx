@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic";
+
+
 import { Card, CardContent } from "./ui/card"
 import { CalendarDays, Dot } from "lucide-react"
 import * as Icons from "lucide-react";
@@ -20,12 +23,9 @@ const ProductsGuide = ({ name, prop, type, desc, icon, date }: ProductsGuideProp
 
                 {/* CardContent fills card height */}
                 <CardContent className="p-0 flex flex-col h-full">
-                    <div className="flex flex-col flex-1 justify-between">
-
-                        {/* Top Content */}
-                        <div className="flex flex-col gap-4 p-4 sm:p-5 lg:p-6">
-
-                            {/* Icon + Title */}
+                    <div className="flex flex-col flex-1 min-h-0 justify-between p-4 sm:p-5 lg:p-6">
+                        {/* Top Content: grows/shrinks so card height stays consistent */}
+                        <div className="flex flex-col gap-4 flex-1 min-h-0">
                             <div className="flex flex-row items-center gap-3">
                                 {IconComponent && (
                                     <div className="bg-myprimary/30 rounded-xl text-dark-primary p-3 flex items-center justify-center">
@@ -38,8 +38,6 @@ const ProductsGuide = ({ name, prop, type, desc, icon, date }: ProductsGuideProp
                                     {name}
                                 </h3>
                             </div>
-
-                            {/* Type + Date */}
                             <div className="flex flex-row gap-2 text-sm items-center">
                                 <span className="font-medium bg-dark-primary text-white rounded-md px-3 py-1">
                                     {type}
@@ -49,10 +47,8 @@ const ProductsGuide = ({ name, prop, type, desc, icon, date }: ProductsGuideProp
                                     <span>{date}</span>
                                 </span>
                             </div>
-
-                            {/* Description + Features */}
-                            <div className="flex flex-col gap-2">
-                                <span className="card-body text-gray-600 leading-snug">{desc}</span>
+                            <div className="flex flex-col gap-2 flex-1 min-h-0">
+                                <span className="card-body text-gray-600 leading-snug line-clamp-3">{desc}</span>
                                 <span className="leading-snug card-title text-sm">Topics covered:</span>
                                 <ul className="flex flex-col gap-1">
                                     {(prop ?? []).slice(0,).map((item, i) => (
@@ -62,7 +58,6 @@ const ProductsGuide = ({ name, prop, type, desc, icon, date }: ProductsGuideProp
                                         </li>
                                     ))}
                                 </ul>
-
                             </div>
                         </div>
                     </div>

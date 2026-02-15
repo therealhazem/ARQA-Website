@@ -5,6 +5,8 @@ import { CalendarDays } from "lucide-react"
 import { PortableText } from "next-sanity"
 import Image from "next/image"
 
+export const dynamic = "force-dynamic";
+
 type PageProps = {
     params: Promise<{ knowledge: string }>
 }
@@ -29,8 +31,7 @@ export default async function Page({ params }: PageProps) {
                 <div className="flex flex-col lg:flex-row items-start justify-center gap-5 w-full">
                     {/* Product Image */}
                     <div className="w-full flex items-center justify-center">
-                        <Image src={theKnowledge.img} className="rounded-xl" width={670} height={670} alt="Doctors" priority />
-
+                        <Image src={theKnowledge.img} className="rounded-xl" width={670} height={670} alt={theKnowledge.title} priority />
                     </div>
                     {/* Product Props */}
                     <div className="flex flex-col items-start justify-between gap-3 w-full">

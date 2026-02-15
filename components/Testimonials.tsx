@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
+
 import { Avatar } from '@radix-ui/react-avatar'
 import { useEffect, useState } from 'react'
 import Marquee from 'react-fast-marquee'
