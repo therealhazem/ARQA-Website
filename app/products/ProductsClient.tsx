@@ -15,7 +15,7 @@ const ITEMS_PER_PAGE = 12
 
 const categories: Record<string, string[]> = {
     Gloves: ["Nitrile", "Vinyl", "Latex"],
-    Masks: ["Medical Mask", "N95"],
+    Masks: ["Face Mask", "N95"],
     Depressors: [],
     Tapes: [],
     Thermometers: [],
@@ -145,8 +145,8 @@ export default function ProductsClient() {
                             <button
                                 onClick={() => updateURL({ category: "All", sub: "" })}
                                 className={`w-full font-bold text-left px-3 py-2 rounded ${category === "All"
-                                        ? "bg-myprimary text-white"
-                                        : "hover:bg-myprimary/15"
+                                    ? "bg-myprimary text-white"
+                                    : "hover:bg-myprimary/15"
                                     }`}
                             >
                                 All Products
@@ -157,8 +157,8 @@ export default function ProductsClient() {
                                     <button
                                         onClick={() => updateURL({ category: parent, sub: "" })}
                                         className={`w-full text-left px-3 py-2 font-semibold rounded ${category === parent
-                                                ? "bg-myprimary text-white"
-                                                : "hover:bg-myprimary/15"
+                                            ? "bg-myprimary text-white"
+                                            : "hover:bg-myprimary/15"
                                             }`}
                                     >
                                         {parent}
@@ -173,8 +173,8 @@ export default function ProductsClient() {
                                                         updateURL({ category: parent, sub: s })
                                                     }
                                                     className={`block w-full text-left text-sm px-3 py-1 rounded ${sub === s
-                                                            ? "bg-myprimary/30 text-primary font-medium"
-                                                            : "text-gray-700 hover:bg-myprimary/15"
+                                                        ? "bg-myprimary/30 text-primary font-medium"
+                                                        : "text-gray-700 hover:bg-myprimary/15"
                                                         }`}
                                                 >
                                                     • {s}

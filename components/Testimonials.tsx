@@ -41,7 +41,7 @@ const Testimonials = () => {
                     <div
                         key={item._id}
                         className="flex flex-col items-center justify-center border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200
-                        px-3 py-5 h-full bg-white gap-2 mx-2"
+                        px-3 py-5 h-full max-w-[500px] bg-white gap-2 mx-2"
                     >
                         <Avatar>
                             <AvatarImage
