@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Separator from "@/components/Separator";
 import Footer from "@/components/Footer";
 import Whatsapp from "@/components/Whatsapp";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -86,6 +87,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollToTop />
         <Navbar />
         <Separator /> {/* Navbar Separator */}
         <main id="main" className="min-h-[65vh]">
