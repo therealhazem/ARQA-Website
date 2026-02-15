@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="w-full py-16 md:py-20 bg-linear-to-t from-dark-primary to-myprimary mt-0">
             <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between text-center md:text-start gap-8 px-4 sm:px-5">
                 <Link href="/" className="self-center">
-                    <Image src="/ARQA Footer Logo.svg" className="w-52 self-center" width={0} height={0} alt="ARQA Footer Logo" />
+                    <Image src="/ARQA Footer Logo.svg" className="w-52 self-center" width={208} height={40} alt="ARQA Footer Logo" />
                 </Link>
                 <div className="text-white flex flex-col gap-3">
                     <h3 className="card-title text-white text-lg">Quick Links</h3>

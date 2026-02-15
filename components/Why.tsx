@@ -29,8 +29,8 @@ const Why = () => {
                 <div className="flex flex-col items-center justify-center xl:flex-row gap-8 lg:gap-14">
                     <Image src="/Doctors.png" className="rounded-xl hover:shadow-lg/20 shadow-white transition-all duration-200 hover:translate-y-[-2px]" width={530} height={530} alt="Doctors" priority />
                     <div className="flex flex-col items-center justify-between text-center lg:gap-4 gap-3">
-                        <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-[4vw] text-center font-bold">Why Choose <span className="font-noticia font-semibold tracking-wider"> ARQA</span> </h1>
-                        <h2 className="text-xl md:text-2xl">Trusted by Healthcare Professionals</h2>
+                        <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-[4vw] text-center font-bold">Why Choose <span className="font-noticia font-semibold tracking-wider"> ARQA</span> </h2>
+                        <h3 className="text-xl md:text-2xl">Trusted by Healthcare Professionals</h3>
                         <p className="text-lg md:text-xl  text-white/90">Our commitment to quality, safety, and excellence has made us the preferred partner for healthcare professionals throughout Egypt and the region</p>
                         <div className="flex flex-col lg:flex-row items-stretch justify-between w-full mt-4 gap-5">
                             {/* card */}

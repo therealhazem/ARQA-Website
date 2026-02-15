@@ -26,7 +26,7 @@ const Testimonials = () => {
 
     return (
         <div className="container mx-auto flex flex-col items-center text-center section-padding">
-            <h1 className="section-title">Testimonials</h1>
+            <h2 className="section-title">Testimonials</h2>
             <p className="section-subtitle">What our customers say about our products</p>
 
             <Marquee

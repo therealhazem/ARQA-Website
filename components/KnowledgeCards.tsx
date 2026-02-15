@@ -25,6 +25,7 @@ const KnowledgeCards = ({ id, img, title, description, category, date, }: any) =
                                 alt={title}
                                 fill
                                 priority
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                         </div>
@@ -58,7 +59,7 @@ const KnowledgeCards = ({ id, img, title, description, category, date, }: any) =
 
                             {/* Button sticks to bottom */}
                             <div className="mt-auto">
-                                <Link href={`/knowledge/${id}`}>
+                                <Link href={`/knowledge/${id}`} aria-label={`Read more: ${title}`}>
                                     <Button
                                         className="w-full text-white bg-dark-primary hover:bg-myprimary
                                     text-sm md:text-base py-5 rounded-xl transition-all"

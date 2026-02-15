@@ -11,9 +11,9 @@ const Certifications = async () => {
         <div className="w-full bg-white section-padding">
             <div className="container mx-auto flex flex-col items-center text-center">
 
-                <h1 className="section-title">
+                <h2 className="section-title">
                     Quality & Certifications
-                </h1>
+                </h2>
 
                 <p className="section-subtitle max-w-3xl">
                     ARQA sources products from manufacturers adhering to international quality standards, including ISO, CE, and FDA, ensuring safety, reliability, and compliance with local Egyptian regulations. We prioritize transparency by working with certified suppliers and showcasing their quality certifications.

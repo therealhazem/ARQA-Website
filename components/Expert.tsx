@@ -5,9 +5,9 @@ const Expert = () => {
     return (
         <div className="w-full bg-gray-50 section-padding flex items-center justify-center">
             <div className="container mx-auto flex flex-col items-center justify-center text-center max-w-3xl">
-                <h1 className="section-title">
+                <h2 className="section-title">
                     Need Expert Advice?
-                </h1>
+                </h2>
 
                 <p className="section-subtitle pb-2">
                     Our team is ready to assist you with product information, availability, and sourcing solutions tailored to your needs.                </p>

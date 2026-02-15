@@ -18,7 +18,10 @@ const Hero = () => {
                 loop
                 playsInline
                 preload="auto"
-            />
+                aria-label="ARQA Medical hero video"
+            >
+                <track kind="captions" src="/captions/hero.vtt" srcLang="en" label="English" />
+            </video>
             <div className="absolute inset-0 bg-myprimary mix-blend-multiply"></div>
 
             <motion.div
@@ -35,7 +38,7 @@ const Hero = () => {
                     Premium Medical Supplies for Egypt&apos;s Healthcare Professionals
                 </h1>
                 <h2 className="
-                text-white/90 font-poppins text-pretty
+                text-white font-poppins text-pretty
                 text-base/snug text-start
                 xl:text-[1.2vw]/relaxed md:text-base/snug md:text-start">
                     Delivering certified medical products that meet international standards, backed by decades of experience in importing, logistics, and supply chain management.

@@ -23,9 +23,9 @@ const MandV = () => {
         <div className="w-full bg-gray-50 section-padding">
 
             <div className="container mx-auto flex flex-col items-center text-center">
-                <h1 className="section-title">
+                <h2 className="section-title">
                     Our Mission & Vision
-                </h1>
+                </h2>
                 <p className="section-subtitle">
                     The principles that guide everything we do
                 </p>

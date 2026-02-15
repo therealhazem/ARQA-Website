@@ -35,7 +35,7 @@ const Navbar = () => {
 
                 {/* Normal Desktop mode > md */}
                 <Link href="/">
-                    <Image src="/ARQA Logo.svg" className="w-36 " width={0} height={0} alt="ARQA LOGO" />
+                    <Image src="/ARQA Logo.svg" className="w-36 " width={144} height={40} alt="ARQA LOGO" />
                 </Link>
 
                 <div className="hidden md:flex flex-row items-center justify-center gap-4">

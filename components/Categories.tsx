@@ -27,9 +27,9 @@ const Categories = () => {
     return (
         <FadeInSection className="w-full bg-gray-50 section-padding">
             <div className="container mx-auto flex flex-col items-center text-center">
-                <h1 className="section-title">
+                <h2 className="section-title">
                     What We Provide
-                </h1>
+                </h2>
                 <h2 className="section-subtitle max-w-2xl">
                     A carefully selected range of medical and industrial supplies designed to support safety, performance, and reliability in healthcare and professional environments.                </h2>
 

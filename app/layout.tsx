@@ -76,12 +76,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://cdn.sanity.io" />
+        <link rel="preconnect" href="https://jhejul37.api.sanity.io" />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
         <Separator /> {/* Navbar Separator */}
-        {children}
+        <main id="main" className="min-h-[65vh]">
+          {children}
+        </main>
         <Whatsapp />
         <Footer />
       </body>

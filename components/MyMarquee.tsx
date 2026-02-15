@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import { useEffect, useState } from "react"
 import Marquee from "react-fast-marquee"
+import Image from "next/image"
 import { getCompanies } from "@/sanity/lib/getCompanies"
 
 const MyMarquee = () => {
@@ -28,7 +28,7 @@ const MyMarquee = () => {
 
     return (
         <div className="container mx-auto flex flex-col items-center text-center section-padding">
-            <h1 className="section-title">Trusted by Leading Organizations</h1>
+            <h2 className="section-title">Trusted by Leading Organizations</h2>
 
             <p className="section-subtitle">
                 ARQA products are used by a wide range of businesses and institutions that value consistency, safety, and dependable supply.
@@ -45,14 +45,14 @@ const MyMarquee = () => {
                     {logos.map((company) => (
                         <div
                             key={company._id}
-                            className="mx-5 max-md:mx-2 flex items-center justify-center"
+                            className="mx-5 max-md:mx-2 flex items-center justify-center relative max-md:max-h-[20vw] max-md:max-w-[22vw] max-lg:max-w-[13vw] max-lg:max-h-[15vw] max-h-[6vw] max-w-[5vw] w-[5vw] h-[6vw] max-md:w-[22vw] max-md:h-[20vw] max-lg:w-[13vw] max-lg:h-[15vw] min-w-[58px] min-h-[68px]"
                         >
-                            <img
+                            <Image
                                 src={company.Image_URL}
                                 alt={company.Company_Name}
-                                className="grayscale saturate-0 max-md:max-h-[20vw] max-md:max-w-[22vw]
-                           max-lg:max-w-[13vw] max-lg:max-h-[15vw]
-                           max-h-[6vw] max-w-[5vw] transition-all duration-500 object-contain"
+                                fill
+                                sizes="(max-width: 768px) 22vw, (max-width: 1024px) 13vw, 5vw"
+                                className="grayscale saturate-0 transition-all duration-500 object-contain"
                             />
                         </div>
                     ))}

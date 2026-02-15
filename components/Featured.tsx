@@ -28,7 +28,7 @@ const Featured = async () => {
 
     return (
         <FadeInSection className="container mx-auto flex flex-col items-center text-center section-padding text-pretty">
-            <h1 className="section-title">Featured Medical Supplies</h1>
+            <h2 className="section-title">Featured Medical Supplies</h2>
             <h2 className="section-subtitle max-w-2xl">
                 Discover our most trusted medical supplies, carefully selected to meet
                 the highest healthcare standards and designed for professional use
