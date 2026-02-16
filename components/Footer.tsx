@@ -4,11 +4,19 @@ import Link from "next/link"
 
 const Footer = () => {
     return (
-        <footer className="w-full py-16 md:py-20 bg-linear-to-t from-dark-primary to-myprimary mt-0">
+        <footer className="w-full py-16 md:py-20 bg-linear-to-r from-dark-primary to-myprimary mt-0">
             <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between text-center md:text-start gap-8 px-4 sm:px-5">
-                <Link href="/" className="self-center">
-                    <Image src="/ARQA Footer Logo.svg" className="w-52 self-center" width={208} height={40} alt="ARQA Footer Logo" />
-                </Link>
+                <div className="flex flex-col gap-2 items-center">
+                    <Link href="/" className="self-center">
+                        <Image src="/ARQA Footer Logo.svg" className="w-52 self-center" width={208} height={40} alt="ARQA Footer Logo" />
+                    </Link>
+                    <div className="flex flex-row items-center gap-3">
+                        <h1 className="text-white">Powered By</h1>
+                        <Link href="/" className="self-center">
+                            <Image src="/Otevo.png" className="w-28 rounded-md self-center" width={208} height={40} alt="ARQA Footer Logo" />
+                        </Link>
+                    </div>
+                </div>
                 <div className="text-white flex flex-col gap-3">
                     <h3 className="card-title text-white text-lg">Quick Links</h3>
                     <Link className="hover:underline active:underline underline-offset-4" href="/">Home</Link>
@@ -75,7 +83,7 @@ const Footer = () => {
             </div>
             <div className="container mx-auto flex flex-col pt-8 text-center gap-4 text-creamy px-4 sm:px-5">
                 <hr className="border-creamy" />
-                <p className="text-sm md:text-base">&copy; 2025 <span className="font-semibold">ARQA Medical Import &amp; Export</span>. All rights reserved.</p>
+                <p className="text-sm md:text-base">&copy; 2026 <span className="font-semibold">ARQA Medical Import &amp; Export</span>. All rights reserved.</p>
             </div>
         </footer>
     )

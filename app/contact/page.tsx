@@ -112,9 +112,9 @@ const page = () => {
                 <div className="flex flex-col h-full w-full md:max-w-[40%] gap-3 md:gap-6">
 
                     {cards.map((item) => (
-                        <div key={item.title} className="flex flex-row items-center w-full border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200 bg-white gap-2 p-6 md:p-8">
+                        <div key={item.title} className="overflow-hidden flex flex-row items-center w-full border-2 rounded-2xl shadow-myprimary hover:shadow-lg/20 transition-all duration-200 bg-white gap-2 p-4 md:p-8">
                             <div className="flex items-center justify-start w-full">
-                                <div className="bg-myprimary/30 rounded-full text-dark-primary my-1 md:my-2 mr-5 p-3">
+                                <div className="bg-myprimary/30 rounded-full text-dark-primary my-1 md:my-2 mr-2 p-2">
                                     <item.icon width={36} height={36} />
                                 </div>
                                 <div className="flex flex-col items-start justify-start">
